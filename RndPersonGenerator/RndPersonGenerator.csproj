@@ -11,10 +11,10 @@
     <None Update="Docs\Instructions.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="UniverseFiles\Test.json">
+    <None Update="UniverseFiles\Modern Life.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="UniverseFiles\Medieval.json">
+    <None Update="UniverseFiles\Whispering Woods.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

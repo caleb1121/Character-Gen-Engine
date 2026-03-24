@@ -1,0 +1,79 @@
+{
+  "UniverseName": "The Whispering Woods: Legend Edition",
+  "ArchetypeTitle": "Entity Class",
+  "Archetypes": {
+    "Ancient Guardian": {
+      "Names": [ "Oakheart", "Gnarled Root", "The Silent Sentinel", "Iron-Bark" ],
+      "MandatoryTraits": {
+        "Bark Texture": [ "Mossy", "Charred", "Silver-Sheen", "Petrified" ],
+        "Age": [ "Ancient (500+ yrs)", "Elder (200 yrs)", "Ancient Seedling" ],
+        "Sentinel Duty": [ "Guard the Great Gate", "Protect the Sacred Spring", "Watch the Dark Path" ]
+      },
+      "OptionalTraits": {
+        "Symbiotic Life": {
+          "Chance": 0.40,
+          "Options": [ "Flowering Vines", "Nest of Blue Jays", "Glowing Fungi" ]
+        },
+        "Ancient Weaponry": {
+          "Chance": 0.15,
+          "Options": [ "Stone Greataxe", "Woven Root Shield", "Sun-Crystal Staff" ]
+        }
+      },
+      "PointPools": {
+        "Guardian Stats": {
+          "TotalPoints": 30,
+          "MinPerAttribute": 5,
+          "MaxPerAttribute": 15,
+          "Attributes": [ "Physical Might", "Nature Magic", "Armor Density", "Vitality" ]
+        }
+      }
+    },
+    "Will-O-Wisp": {
+      "Names": [ "Flicker", "Glow-Worm", "The Blue Lure", "Ignis" ],
+      "MandatoryTraits": {
+        "Light Color": [ "Spectral Blue", "Sickly Green", "Pale Violet" ],
+        "Movement Style": [ "Erratic Flitting", "Slow Drift", "Pulse-Orbit" ]
+      },
+      "OptionalTraits": {
+        "Luring Sound": {
+          "Chance": 0.10,
+          "Options": [ "Whispered Name", "Laughter", "Child's Cry" ]
+        }
+      },
+      "PointPools": {
+        "Ethereal Energy": {
+          "TotalPoints": 15,
+          "MinPerAttribute": 2,
+          "MaxPerAttribute": 10,
+          "Attributes": [ "Brightness", "Deception", "Invisibility" ]
+        }
+      }
+    },
+    "Woodland Ranger": {
+      "Names": [ "Kaelen the Swift", "Finn of the Briar", "Elara Shadowstep" ],
+      "MandatoryTraits": {
+        "Primary Weapon": [ "Longbow", "Twin Daggers", "Quarterstaff" ],
+        "Specialization": [ "Trackless Hunter", "Beast Speaker", "Trap Master" ]
+      },
+      "OptionalTraits": {
+        "Battle Scars": {
+          "Chance": 0.45,
+          "Options": [ "Missing Ear", "Claw Marks on Chest", "Notched Ear" ],
+          "DefaultValue": "Unscarred"
+        },
+        "Animal Companion": {
+          "Chance": 0.20,
+          "Options": [ "Wolf-Pup", "Great Owl", "Moss-Toad" ]
+        }
+      },
+      "PointPools": {
+        "Survival Skills": {
+          "TotalPoints": 25,
+          "MinPerAttribute": 4,
+          "MaxPerAttribute": 12,
+          "Attributes": [ "Stealth", "Archery", "Tracking", "Medicine" ]
+        }
+      }
+    }
+  }
+}

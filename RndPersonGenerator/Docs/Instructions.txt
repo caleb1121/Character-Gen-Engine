@@ -1,58 +1,84 @@
-===========================================================
-          RANDOM PERSON GENERATOR - MODDING GUIDE
-===========================================================
+==========================================================================
+                      CHARACTER GEN ENGINE: MODDING GUIDE
+==========================================================================
+ Version: 0.3
+ Purpose: Creating Custom Universe Modules (.json)
+--------------------------------------------------------------------------
 
-Welcome! This program is designed to be modular, meaning 
-YOU can add your own custom universes (like Star Wars, 
-Cyberpunk, or your own fantasy world) without touching 
-the actual code.
+1. GETTING STARTED
+------------------
+All universe files must be placed in the 'UniverseFiles' folder.
+The file MUST end in '.json' (Example: MyWorld.json).
 
------------------------------------------------------------
-STEP 1: WHERE TO PUT YOUR FILES
------------------------------------------------------------
-All universe files must be placed in the 'UniverseFiles' 
-folder located in the same directory as this program.
+2. THE TOP-LEVEL SETTINGS
+-------------------------
+Every file starts with these two lines:
 
------------------------------------------------------------
-STEP 2: CREATING A NEW UNIVERSE
------------------------------------------------------------
-1. Create a new text file and change the extension from 
-   '.txt' to '.json'. 
-   (Example: 'Warhammer.json' or 'ModernDay.json')
+* UniverseName:   The name of your world (displayed in the menu).
+* ArchetypeTitle: The question the app asks (e.g., "Select Race").
 
-2. Open the file in any text editor (Notepad, VS Code).
+3. THE ARCHETYPE TREE
+---------------------
+"Archetypes" are the main categories of your world (e.g., Human, Ork, 
+Car, or Ghost). Each Archetype can have three types of data:
 
------------------------------------------------------------
-STEP 3: THE JSON STRUCTURE (THE TEMPLATE)
------------------------------------------------------------
-Your file MUST follow this specific format for the program
-to read it. Copy and paste this template:
+[A] NAMES
+    A list of names specifically for this Archetype.
+    Format: "Names": ["Alice", "Bob"]
 
+[B] MANDATORY TRAITS
+    Traits the entity ALWAYS has.
+    Format: "Category": ["Option 1", "Option 2"]
+
+[C] OPTIONAL TRAITS (PROBABILITY)
+    Traits that only appear if a "hidden dice roll" succeeds.
+    - Chance: 0.1 = 10%, 0.5 = 50%, 1.0 = 100%.
+    - Options: The list of possible traits if the roll succeeds.
+
+[D] POINT POOLS (ECONOMY)
+    Used for balanced stats (like D&D or Fallout).
+    - TotalPoints: The budget to be spent.
+    - Min/Max: The lowest/highest a single stat can be.
+    - Attributes: The list of stats that share the points.
+
+4. THE GOLDEN RULES OF JSON
+---------------------------
+JSON is extremely strict. One mistake will stop the program:
+* Use "Double Quotes" for all text.
+* Use [Square Brackets] for lists.
+* Use {Curly Braces} for blocks of data.
+* Every line needs a COMMA at the end, EXCEPT for the last line 
+  in a section.
+
+5. MASTER TEMPLATE (COPY & PASTE)
+---------------------------------
 {
-  "UniverseName": "My Awesome World",
-  "Names": ["Alice", "Bob", "Charlie"],
-  "Occupations": ["Baker", "Spy", "Knight"],
-  "Standings": ["Royal", "Commoner", "Outlaw"],
-  "Secrets": ["Is a ghost", "Stole the crown", "Loves cats"]
+  "UniverseName": "My New World",
+  "ArchetypeTitle": "Select Type",
+  "Archetypes": {
+    "Example Archetype": {
+      "Names": ["Name 1", "Name 2"],
+      "MandatoryTraits": {
+        "Core Trait": ["Option A", "Option B"]
+      },
+      "OptionalTraits": {
+        "Rare Perk": {
+          "Chance": 0.2,
+          "Options": ["Hidden Power", "Extra Gold"]
+        }
+      },
+      "PointPools": {
+        "Combat Stats": {
+          "TotalPoints": 20,
+          "MinPerAttribute": 5,
+          "MaxPerAttribute": 10,
+          "Attributes": ["Attack", "Defense"]
+        }
+      }
+    }
+  }
 }
 
------------------------------------------------------------
-STEP 4: IMPORTANT RULES (PLEASE READ!)
------------------------------------------------------------
-To keep the program from crashing, follow these rules:
-
-* QUOTES: Every word must be inside double quotes "like this".
-* COMMAS: Put a comma after every item EXCEPT the last 
-  one in a list.
-* BRACKETS: The whole file must start with { and end with }.
-* NO TABS: Use spaces instead of tabs if possible.
-
------------------------------------------------------------
-STEP 5: ACTIVATE YOUR UNIVERSE
------------------------------------------------------------
-Once you save your file in 'UniverseFiles', simply restart 
-the program. Your new universe will automatically appear 
-in the "Select Universe" menu!
-
-Happy generating!
-===========================================================
+==========================================================================
+                     HAPPY WORLD BUILDING!
+==========================================================================
