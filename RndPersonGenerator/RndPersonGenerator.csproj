@@ -8,7 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Update="Medieval.json">
+    <None Update="Docs\Instructions.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="UniverseFiles\Test.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="UniverseFiles\Medieval.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

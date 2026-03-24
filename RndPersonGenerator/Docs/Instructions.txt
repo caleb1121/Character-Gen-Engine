@@ -1,0 +1,58 @@
+===========================================================
+          RANDOM PERSON GENERATOR - MODDING GUIDE
+===========================================================
+
+Welcome! This program is designed to be modular, meaning 
+YOU can add your own custom universes (like Star Wars, 
+Cyberpunk, or your own fantasy world) without touching 
+the actual code.
+
+-----------------------------------------------------------
+STEP 1: WHERE TO PUT YOUR FILES
+-----------------------------------------------------------
+All universe files must be placed in the 'UniverseFiles' 
+folder located in the same directory as this program.
+
+-----------------------------------------------------------
+STEP 2: CREATING A NEW UNIVERSE
+-----------------------------------------------------------
+1. Create a new text file and change the extension from 
+   '.txt' to '.json'. 
+   (Example: 'Warhammer.json' or 'ModernDay.json')
+
+2. Open the file in any text editor (Notepad, VS Code).
+
+-----------------------------------------------------------
+STEP 3: THE JSON STRUCTURE (THE TEMPLATE)
+-----------------------------------------------------------
+Your file MUST follow this specific format for the program
+to read it. Copy and paste this template:
+
+{
+  "UniverseName": "My Awesome World",
+  "Names": ["Alice", "Bob", "Charlie"],
+  "Occupations": ["Baker", "Spy", "Knight"],
+  "Standings": ["Royal", "Commoner", "Outlaw"],
+  "Secrets": ["Is a ghost", "Stole the crown", "Loves cats"]
+}
+
+-----------------------------------------------------------
+STEP 4: IMPORTANT RULES (PLEASE READ!)
+-----------------------------------------------------------
+To keep the program from crashing, follow these rules:
+
+* QUOTES: Every word must be inside double quotes "like this".
+* COMMAS: Put a comma after every item EXCEPT the last 
+  one in a list.
+* BRACKETS: The whole file must start with { and end with }.
+* NO TABS: Use spaces instead of tabs if possible.
+
+-----------------------------------------------------------
+STEP 5: ACTIVATE YOUR UNIVERSE
+-----------------------------------------------------------
+Once you save your file in 'UniverseFiles', simply restart 
+the program. Your new universe will automatically appear 
+in the "Select Universe" menu!
+
+Happy generating!
+===========================================================

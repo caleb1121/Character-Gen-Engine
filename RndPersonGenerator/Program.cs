@@ -20,7 +20,8 @@ while (keepRunning) // This loop will keep the program running until the user ch
     Console.WriteLine("=======================");
     Console.WriteLine("Please select from the following options:");
     Console.WriteLine("1. Generate a random person");
-    Console.WriteLine("2. Exit");
+    Console.WriteLine("2. Instructions");
+    Console.WriteLine("3. Exit");
 
     string userinput = Console.ReadLine();
 
@@ -31,14 +32,26 @@ while (keepRunning) // This loop will keep the program running until the user ch
         switch (choice)
         {
             case 1:
-                GenerateRandomPerson();
-                break;
+            // First, we need to let the user select a universe (JSON file)
+            string chosenFile = SelectUniverse();
+
+            // If a file was selected, generate a random person from that file
+            if (chosenFile != null)
+                {
+                    GenerateRandomPerson(chosenFile);
+                }
+            break;
+           
             case 2:
+                ShowInstructions(); // This will show the instructions from a text file
+                break;
+            
+            case 3:
                 keepRunning = false; // This breaks the loop and ends the program
                 ExitProgram();
                 break;
             default:
-                Console.WriteLine("Invalid choice. Please pick 1 or 2.");
+                Console.WriteLine("Invalid choice. Please pick 1, 2 or 3.");
                 Console.ReadKey();
                 break;
         }
@@ -50,13 +63,31 @@ while (keepRunning) // This loop will keep the program running until the user ch
     }
 }
 
-
-
-static void GenerateRandomPerson() // This method will generate a random person
+static void ShowInstructions()
 {
-    //1. Load the file text#
-    string fileName = "Medieval.json";
-    string jsonString = File.ReadAllText(fileName);
+    string filePath = Path.Combine("Docs", "Instructions.txt");
+
+    if (File.Exists(filePath))
+    {
+        string content = File.ReadAllText(filePath);
+        Console.Clear();
+        Console.WriteLine(content);
+        Console.WriteLine("\nPress any key to return to the main menu...");
+        Console.ReadKey();
+    }
+    else
+    {
+        // Helpful debug: show the full path where it's looking
+        Console.WriteLine($"Error: {filePath} not found!");
+        Console.WriteLine($"Full path: {Path.GetFullPath(filePath)}");
+        Console.ReadKey();
+    }
+}
+
+static void GenerateRandomPerson(string filePath) // This method will generate a random person
+{
+    // 1. Read the JSON file into a string
+    string jsonString = File.ReadAllText(filePath); 
 
     // 2. Deserialize (Convert JSON text -> C# Object)
     UniverseData data = JsonSerializer.Deserialize<UniverseData>(jsonString);
@@ -84,7 +115,40 @@ static void GenerateRandomPerson() // This method will generate a random person
     Console.ReadLine();
 }
 
-    static void ExitProgram() // This method will exit the program
+static string SelectUniverse() // This method will allow the user to select a universe
+{
+    string folder = "UniverseFiles";
+
+    // Check if the folder exists, if not, create it.
+    if (!Directory.Exists(folder)) 
+    { Directory.CreateDirectory(folder); }
+
+    string[] files = Directory.GetFiles(folder, "*.json");
+
+    if (files.Length == 0)
+    {
+        Console.WriteLine("Put your .json files in the '{folder}' folder!");
+        Console.ReadKey();
+        return null;
+    }
+
+    Console.Clear();
+    Console.WriteLine("--- CHOOSE YOUR UNIVERSE ---");
+
+    for (int i = 0; i < files.Length; i++)
+    {
+        Console.WriteLine($"{i + 1}. {Path.GetFileNameWithoutExtension(files[i])}");
+    }
+    Console.WriteLine($"{files.Length + 1}. Back");
+
+    if (int.TryParse(Console.ReadLine(), out int choice) && choice > 0 && choice <= files.Length)
+    {
+        return files[choice - 1];
+    }
+    return null;
+}
+
+static void ExitProgram() // This method will exit the program
 {
     Console.WriteLine("Exiting...");
     Environment.Exit(0);
