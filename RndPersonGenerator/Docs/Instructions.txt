@@ -1,84 +1,101 @@
 ==========================================================================
-                      CHARACTER GEN ENGINE: MODDING GUIDE
+                REALITY ENGINE v0.5 - MODDING MANUAL
 ==========================================================================
- Version: 0.3
- Purpose: Creating Custom Universe Modules (.json)
+Welcome to the Reality Engine. This guide walks you through building your
+own universes. Follow these tiers to master the engine's logic.
+
 --------------------------------------------------------------------------
+ LEVEL 1: THE EASY START (Basic Randomization)
+--------------------------------------------------------------------------
+GOAL: Create a functional universe in seconds.
+LOGIC: Every item in a list has an equal (50/50, 33/33, etc.) chance.
 
-1. GETTING STARTED
-------------------
-All universe files must be placed in the 'UniverseFiles' folder.
-The file MUST end in '.json' (Example: MyWorld.json).
+HOW TO BUILD:
+- Use square brackets [ ] to create a simple list of words.
+- No extra settings required.
 
-2. THE TOP-LEVEL SETTINGS
--------------------------
-Every file starts with these two lines:
-
-* UniverseName:   The name of your world (displayed in the menu).
-* ArchetypeTitle: The question the app asks (e.g., "Select Race").
-
-3. THE ARCHETYPE TREE
----------------------
-"Archetypes" are the main categories of your world (e.g., Human, Ork, 
-Car, or Ghost). Each Archetype can have three types of data:
-
-[A] NAMES
-    A list of names specifically for this Archetype.
-    Format: "Names": ["Alice", "Bob"]
-
-[B] MANDATORY TRAITS
-    Traits the entity ALWAYS has.
-    Format: "Category": ["Option 1", "Option 2"]
-
-[C] OPTIONAL TRAITS (PROBABILITY)
-    Traits that only appear if a "hidden dice roll" succeeds.
-    - Chance: 0.1 = 10%, 0.5 = 50%, 1.0 = 100%.
-    - Options: The list of possible traits if the roll succeeds.
-
-[D] POINT POOLS (ECONOMY)
-    Used for balanced stats (like D&D or Fallout).
-    - TotalPoints: The budget to be spent.
-    - Min/Max: The lowest/highest a single stat can be.
-    - Attributes: The list of stats that share the points.
-
-4. THE GOLDEN RULES OF JSON
----------------------------
-JSON is extremely strict. One mistake will stop the program:
-* Use "Double Quotes" for all text.
-* Use [Square Brackets] for lists.
-* Use {Curly Braces} for blocks of data.
-* Every line needs a COMMA at the end, EXCEPT for the last line 
-  in a section.
-
-5. MASTER TEMPLATE (COPY & PASTE)
----------------------------------
-{
-  "UniverseName": "My New World",
-  "ArchetypeTitle": "Select Type",
-  "Archetypes": {
-    "Example Archetype": {
-      "Names": ["Name 1", "Name 2"],
-      "MandatoryTraits": {
-        "Core Trait": ["Option A", "Option B"]
-      },
-      "OptionalTraits": {
-        "Rare Perk": {
-          "Chance": 0.2,
-          "Options": ["Hidden Power", "Extra Gold"]
-        }
-      },
-      "PointPools": {
-        "Combat Stats": {
-          "TotalPoints": 20,
-          "MinPerAttribute": 5,
-          "MaxPerAttribute": 10,
-          "Attributes": ["Attack", "Defense"]
-        }
-      }
-    }
-  }
+EXAMPLE:
+"MandatoryTraits": {
+  "Starting Weapon": ["Iron Sword", "Wooden Club", "Magic Wand"]
 }
 
-==========================================================================
-                     HAPPY WORLD BUILDING!
+EXPECTED OUTPUT:
+The character will simply display the text.
+> Starting Weapon: Iron Sword
+(You will see "Magic Wand" just as often as "Wooden Club")
+
+--------------------------------------------------------------------------
+ LEVEL 2: THE MEDIUM TIER (Weights & Rarity)
+--------------------------------------------------------------------------
+GOAL: Control the "feel" of the world and simulate scarcity.
+LOGIC: Items are picked based on a "Weighted Roulette."
+
+HOW TO BUILD:
+- Use curly braces { } for each item.
+- "Weight": Higher numbers make items more common.
+- "Rarity": A custom label (Common, Rare, etc.).
+- Set "ShowRarity": true at the very top of your JSON to see the labels.
+
+EXAMPLE:
+"Primary Weapon": [
+  { "Value": "Rusty Spoon", "Weight": 100, "Rarity": "Trash" },
+  { "Value": "Laser Sword", "Weight": 1, "Rarity": "LEGENDARY" }
+]
+
+EXPECTED OUTPUT:
+The engine calculates math to make the Laser Sword appear only 1% of the time.
+> Primary Weapon: Laser Sword [LEGENDARY]
+(The brackets [ ] only appear if "ShowRarity" is true in your file.)
+
+--------------------------------------------------------------------------
+ LEVEL 3: THE HARD TIER (Logic Gates & Stats)
+--------------------------------------------------------------------------
+GOAL: Create "Living Worlds" where traits depend on each other.
+LOGIC: Use Tags to block or unlock specific content.
+
+HOW TO BUILD:
+- "GrantsTag": Gives the character a "hidden" status.
+- "Requires": Hides an item unless the character has that specific tag.
+- "StartingTags": Gives tags immediately (e.g., ["Organic", "Hero"]).
+- "PointPools": Sets a budget of points to be split between attributes.
+
+EXAMPLE LOGIC:
+1. Archetype grants tag "Neural-Linked".
+2. "Hacking Deck" item requires "Neural-Linked".
+
+EXPECTED OUTPUT:
+Highly specialized characters. A "Warrior" will never accidentally roll
+a "Hacking Deck" because they lack the required tag.
+> TAGS: Organic, Neural-Linked
+> Hacking Deck: Zetatech MK.II [Rare]
+> STRENGTH: 14
+> AGILITY: 8
+(Attributes are mathematically balanced based on your Point Pool budget.)
+
+--------------------------------------------------------------------------
+🛠️ MODDER'S QUICK REFERENCE
+--------------------------------------------------------------------------
+
+KEY           | EXAMPLE              | DESCRIPTION
+--------------|----------------------|------------------------------------
+Weight        | "Weight": 50         | Probability (Higher = More Common)
+Rarity        | "Rarity": "Epic"     | Text shown in brackets [ ]
+Requires      | "Requires": "Bio"    | Item is hidden without this tag
+GrantsTag     | "GrantsTag": "Bio"   | Unlocks items requiring this tag
+StartingTags  | ["Organic"]          | Tags given at the very start
+Chance        | "Chance": 0.5        | % chance (0.0-1.0) for OptionalTraits
+TotalPoints   | "TotalPoints": 20    | Budget for Point Pool attributes
+
+--------------------------------------------------------------------------
+🚀 PRO TIP: THE GENERATION CHAIN
+--------------------------------------------------------------------------
+The engine builds characters in this exact order:
+1. Archetype (Starts Tags)
+2. Name
+3. Mandatory Traits (Can Grant/Require Tags)
+4. Optional Traits (Can Grant/Require Tags)
+5. Point Pools (Final Stats)
+
+If a Mandatory Trait requires a tag, that tag MUST be granted by the 
+Archetype or a PREVIOUS Mandatory Trait in the list!
 ==========================================================================

@@ -1,0 +1,235 @@
+{
+  "UniverseName": "Neon Syndicate: Absolute Zero",
+  "ArchetypeTitle": "Citizen Class",
+  "ShowRarity": true,
+  "Archetypes": {
+    "Street Drifter": {
+      "Weight": 100,
+      "StartingTags": [ "Organic", "Street-Savy" ],
+      "Names": [ "Jax", "Kira", "Vex", "Mondo", "Zero", "Reze", "Unit 7", "Flux", "Axel", "Klay", "Nyx", "Rogue", "Dante", "Sloane", "Echo", "Jinx", "Malice", "Raver", "Static", "Zinc" ],
+      "MandatoryTraits": {
+        "District": [
+          {
+            "Value": "Sector 01: The Gut",
+            "Weight": 100,
+            "Rarity": "Common"
+          },
+          {
+            "Value": "Sector 04: Chemical Row",
+            "Weight": 90,
+            "Rarity": "Common"
+          },
+          {
+            "Value": "Sector 09: Rust Valley",
+            "Weight": 80,
+            "Rarity": "Uncommon"
+          },
+          {
+            "Value": "The Neon Slums",
+            "Weight": 70,
+            "Rarity": "Uncommon"
+          },
+          {
+            "Value": "Old Metro Tunnels",
+            "Weight": 50,
+            "Rarity": "Rare"
+          },
+          {
+            "Value": "The Chrome Spire: Lobby",
+            "Weight": 10,
+            "Rarity": "Epic"
+          },
+          {
+            "Value": "The Ghost-Shell Suburbs",
+            "Weight": 5,
+            "Rarity": "Legendary"
+          },
+          {
+            "Value": "Executive Penthouse 99",
+            "Weight": 1,
+            "Rarity": "MYTHIC"
+          }
+        ],
+        "Primary Weapon": [
+          {
+            "Value": "Rusty Lead Pipe",
+            "Weight": 200,
+            "Rarity": "Trash"
+          },
+          {
+            "Value": "Kitchen Knife",
+            "Weight": 150,
+            "Rarity": "Common"
+          },
+          {
+            "Value": "Stun-Baton",
+            "Weight": 80,
+            "Rarity": "Common"
+          },
+          {
+            "Value": "Heavy Wrench",
+            "Weight": 60,
+            "Rarity": "Uncommon"
+          },
+          {
+            "Value": "Scrapped 9mm",
+            "Weight": 40,
+            "Rarity": "Uncommon"
+          },
+          {
+            "Value": "Street-Legal SMG",
+            "Weight": 25,
+            "Rarity": "Rare"
+          },
+          {
+            "Value": "Mantis Blades",
+            "Weight": 10,
+            "Requires": "Augmented",
+            "Rarity": "Epic"
+          },
+          {
+            "Value": "Mono-Filament Wire",
+            "Weight": 5,
+            "Requires": "Augmented",
+            "Rarity": "Legendary"
+          },
+          {
+            "Value": "Thermal Katana",
+            "Weight": 2,
+            "Requires": "Augmented",
+            "Rarity": "MYTHIC"
+          }
+        ],
+        "Armor Type": [
+          {
+            "Value": "Heavy Trenchcoat",
+            "Weight": 100,
+            "Rarity": "Common"
+          },
+          {
+            "Value": "Scavenged Riot Gear",
+            "Weight": 50,
+            "Rarity": "Uncommon"
+          },
+          {
+            "Value": "Ballistic Vest",
+            "Weight": 30,
+            "Rarity": "Rare"
+          },
+          {
+            "Value": "Kevlar-Lined Suit",
+            "Weight": 15,
+            "Rarity": "Epic"
+          },
+          {
+            "Value": "Prototype Stealth Cloak",
+            "Weight": 2,
+            "Requires": "High-Tier-Access",
+            "Rarity": "Legendary"
+          }
+        ]
+      },
+      "OptionalTraits": {
+        "Cybernetic Augmentation": {
+          "Chance": 0.45,
+          "Options": [
+            {
+              "Value": "Bionic Eye (Standard)",
+              "Weight": 80,
+              "GrantsTag": "Augmented",
+              "Rarity": "Common"
+            },
+            {
+              "Value": "Sub-Dermal Armor Mk I",
+              "Weight": 50,
+              "GrantsTag": "Augmented",
+              "Rarity": "Uncommon"
+            },
+            {
+              "Value": "Hydraulic Leg Actuators",
+              "Weight": 30,
+              "GrantsTag": "Augmented",
+              "Rarity": "Rare"
+            },
+            {
+              "Value": "Neural Uplink V2",
+              "Weight": 15,
+              "GrantsTag": "Neural-Linked",
+              "Rarity": "Epic"
+            },
+            {
+              "Value": "Experimental Sandevistan",
+              "Weight": 5,
+              "GrantsTag": "Augmented",
+              "Rarity": "Legendary"
+            },
+            {
+              "Value": "Military Grade Berserk Chip",
+              "Weight": 1,
+              "GrantsTag": "Augmented",
+              "Rarity": "MYTHIC"
+            }
+          ]
+        }
+      },
+      "PointPools": {
+        "Street Cred": {
+          "TotalPoints": 15,
+          "MinPerAttribute": 1,
+          "MaxPerAttribute": 10,
+          "Attributes": [ "Rep", "Combat", "Luck", "Fear" ]
+        }
+      }
+    },
+    "Corporate Executive": {
+      "Weight": 5,
+      "StartingTags": [ "Elite-Status", "Wealthy", "Organic" ],
+      "Names": [ "Mr. Henderson", "Ms. Sterling", "CEO Kurosawa", "Director Vane", "Chairman Holt" ],
+      "MandatoryTraits": {
+        "Corporation": [
+          {
+            "Value": "Militech",
+            "Weight": 50,
+            "Rarity": "Global"
+          },
+          {
+            "Value": "BioTechnica",
+            "Weight": 40,
+            "Rarity": "Global"
+          },
+          {
+            "Value": "Arasaka",
+            "Weight": 10,
+            "Rarity": "S-Tier",
+            "GrantsTag": "High-Tier-Access"
+          }
+        ],
+        "Luxury Item": [
+          {
+            "Value": "Designer Watch",
+            "Weight": 100,
+            "Rarity": "Common"
+          },
+          {
+            "Value": "Private AV4 Shuttle",
+            "Weight": 20,
+            "Rarity": "Epic"
+          },
+          {
+            "Value": "Pre-Collapse Scotch",
+            "Weight": 5,
+            "Rarity": "Legendary"
+          }
+        ]
+      },
+      "PointPools": {
+        "Influence": {
+          "TotalPoints": 50,
+          "MinPerAttribute": 10,
+          "MaxPerAttribute": 25,
+          "Attributes": [ "Net Worth", "Political Power", "Security Level" ]
+        }
+      }
+    }
+  }
+}
