@@ -1,0 +1,57 @@
+==========================================================================
+                WELCOME TO THE REALITY ENGINE (v1)
+==========================================================================
+
+Reality Engine is a lightweight, JSON-driven framework designed to build 
+deep, logically consistent characters and entire universes from the 
+ground up. It acts as a "Universal Character Engine," allowing 
+you to create everything from Cyberpunk mercenaries to Eldritch horrors 
+simply by editing text files.
+
+--------------------------------------------------------------------------
+🚀 WHAT CAN THIS APP DO?
+--------------------------------------------------------------------------
+
+Reality Engine is more than a simple randomizer; it is a logic-driven 
+simulation of identity and history. Here is what it offers:
+
+* **Deep Identity Logic**: Manages a three-part naming system (First, 
+  Last, and optional Nickname) that respects gender requirements.
+* **Gender & Pronoun Resolution**: Automatically rolls gender and 
+  assigns "Smart Pronouns" ({Subject}, {Object}, {Possessive}) for 
+  use in biographies.
+* **The "Tag" System**: Acts as the engine's brain, ensuring traits 
+  make sense (e.g., a "Laser Sword" requires an "Augmented" tag).
+* **Weighted Rarity Control**: You define exactly how rare an item is. 
+  Weight 100 is common; Weight 1 is a legendary find.
+* **RPG Stat Balancing**: Uses "Point Pools" to mathematically 
+  distribute points across custom attributes like Str, Dex, or Int.
+* **Narrative Storytelling**: Stitches together biography fragments 
+  into a cohesive life story based on the character's rolled data.
+
+--------------------------------------------------------------------------
+💎 THE "SMART" BIO SYSTEM
+--------------------------------------------------------------------------
+
+The standout feature of Reality Engine is its "Stat-Aware" narrative 
+engine. This allows for "Stat-Gating," where specific story 
+sentences only trigger if a character is strong, smart, or lucky enough 
+to "earn" them through their rolled attributes.
+
+* **Trait Injection**: Placeholders like {Starting Weapon} are 
+  automatically swapped for the actual items the character rolled.
+* **Tag-Based Branching**: A character's origin can change entirely 
+  based on tags like "Noble-Blood" or "Pauper".
+
+--------------------------------------------------------------------------
+🛠️ HOW TO LEARN
+--------------------------------------------------------------------------
+
+This library is organized into levels to help you master the engine:
+
+1. **Level 1**: Basic Randomization (Simple lists).
+2. **Level 2**: Weights & Rarity (Simulating scarcity).
+3. **Level 3**: Logic & Stats (Tags and RPG math).
+4. **Level 4**: Narrative Elite (Stat-gated storytelling).
+
+==========================================================================

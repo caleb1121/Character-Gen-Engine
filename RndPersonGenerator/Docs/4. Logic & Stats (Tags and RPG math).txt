@@ -1,0 +1,89 @@
+==========================================================================
+                LEVEL 3: THE "BRAIN" (Logic & RPG Math)
+==========================================================================
+GOAL: Create characters that make sense and have balanced attributes.
+
+In Level 2, we controlled rarity. In Level 3, we create "Rules." This 
+ensures a "Warrior" doesn't accidentally roll a "Magic Wand," and that 
+character names actually match their rolled gender.
+
+--------------------------------------------------------------------------
+1. THE TAG SYSTEM (Logic Gates)
+--------------------------------------------------------------------------
+Tags are the "hidden status effects" of the engine. They act as keys 
+to unlock or block specific content.
+
+* StartingTags: Tags given at the very start (e.g., ["Noble", "Human"]).
+* GrantsTag: A trait that gives the character a new key when rolled.
+* Requires: A "Gate" that hides an item unless the character has the key.
+
+LOGIC EXAMPLE:
+1. Archetype grants "Cybernetic" tag.
+2. "Neural Link" item REQUIRES the "Cybernetic" tag.
+3. If the character isn't Cybernetic, they will NEVER see the Neural Link.
+
+--------------------------------------------------------------------------
+2. GENDER-LOCKED IDENTITY
+--------------------------------------------------------------------------
+The engine rolls Gender BEFORE it rolls Names. It then adds the gender 
+(Male, Female, or Non-Binary) as a Tag automatically.
+
+HOW TO USE IT:
+In your "FirstNames" list, use the "Requires" key to lock names.
+
+EXAMPLE:
+{ "Value": "Arthur", "Requires": "Male" }
+{ "Value": "Guinevere", "Requires": "Female" }
+
+--------------------------------------------------------------------------
+3. POINT POOL MATH (Balanced Stats)
+--------------------------------------------------------------------------
+Point Pools distribute a budget of points across a list of attributes. 
+To avoid the "All 18s" bug, you must balance your math.
+
+THE FORMULA:
+(Target Average Stat) x (Number of Attributes) = TotalPoints
+
+* TotalPoints: Your "Budget."
+* Min/MaxPerAttribute: The floor and ceiling for a single stat.
+
+BAD MATH: 75 points into 3 stats (Max 18). 
+(3 x 18 = 54). The engine has 21 points left over and everyone hits 18.
+
+GOOD MATH: 72 points into 6 stats (Max 18).
+The engine has "room" to move points, creating varied, unique characters.
+
+--------------------------------------------------------------------------
+🚀 LEVEL 3 EXAMPLE (Logic & Math)
+--------------------------------------------------------------------------
+"Archetypes": {
+  "Slayer": {
+    "GenderOdds": { "Male": 50, "Female": 50 },
+    "FirstNames": [
+      { "Value": "Kael", "Requires": "Male" },
+      { "Value": "Sloane", "Requires": "Female" }
+    ],
+    "StartingTags": ["Martial"],
+    "MandatoryTraits": {
+      "Weapon": [
+        { "Value": "Greatsword", "Requires": "Martial" },
+        { "Value": "Spellbook", "Requires": "Arcane" }
+      ]
+    },
+    "PointPools": {
+      "Core": {
+        "TotalPoints": 45,
+        "Attributes": ["Strength", "Agility", "Stamina"]
+      }
+    }
+  }
+}
+
+--------------------------------------------------------------------------
+💡 PRO TIP: THE GENERATION CHAIN
+--------------------------------------------------------------------------
+The engine follows a strict order:
+Archetype -> Gender -> Pronouns -> Names -> Traits -> Stats.
+
+A trait can only "Require" a tag if it was granted in an EARLIER step!
+==========================================================================

@@ -1,0 +1,173 @@
+{
+  "UniverseName": "The Grand Armory of Aetheria",
+  "Modules": {
+    "ShowRarity": true,
+    "UseNarrative": true,
+    "UsePointPools": true
+  },
+  "ArchetypeTitle": "Weapon Type",
+  "Archetypes": {
+    "Masterwork Longsword": {
+      "NicknameChance": 0.8,
+      "GenderOdds": {
+        "Sentient (Aggressive)": 40,
+        "Sentient (Wise)": 40,
+        "Inert": 20
+      },
+      "FirstNames": [
+        {
+          "Value": "Sun-Forged",
+          "Weight": 10
+        },
+        {
+          "Value": "Shadow-Bound",
+          "Weight": 10
+        },
+        {
+          "Value": "Frost-Bitten",
+          "Weight": 10
+        },
+        {
+          "Value": "Blood-Soaked",
+          "Weight": 10
+        },
+        {
+          "Value": "Star-Touched",
+          "Weight": 5,
+          "Rarity": "Epic"
+        },
+        {
+          "Value": "Dull",
+          "Weight": 20,
+          "Rarity": "Trash"
+        },
+        {
+          "Value": "Ancient",
+          "Weight": 15
+        },
+        {
+          "Value": "Vibrating",
+          "Weight": 5
+        }
+      ],
+      "LastNames": [ "Cutter", "Reaper", "Edge", "Bane", "Will", "Slayer", "Thorne", "Shard", "Whisper", "Vengeance" ],
+      "Nicknames": [ "The Orphan-Maker", "King-Slayer", "God-Challenger", "The Silent Death", "Hope's End" ],
+      "StartingTags": [ "Metallic", "Slashing" ],
+      "MandatoryTraits": {
+        "Blade Material": [
+          {
+            "Value": "Folded Steel",
+            "Weight": 50
+          },
+          {
+            "Value": "Obsidian",
+            "Weight": 20,
+            "GrantsTag": "Fragile"
+          },
+          {
+            "Value": "Mithril",
+            "Weight": 5,
+            "GrantsTag": "Weightless",
+            "Rarity": "Rare"
+          },
+          {
+            "Value": "Neutronium",
+            "Weight": 1,
+            "GrantsTag": "Heavy",
+            "Rarity": "LEGENDARY"
+          }
+        ],
+        "Hilt Design": [ "Leather Wrapped", "Ivory Inlay", "Gold-Plated", "Living Vines" ]
+      },
+      "OptionalTraits": {
+        "Elemental Infusion": {
+          "Chance": 0.3,
+          "Options": [
+            {
+              "Value": "Flame-Tongue",
+              "GrantsTag": "Fire",
+              "Rarity": "Rare"
+            },
+            {
+              "Value": "Storm-Caller",
+              "GrantsTag": "Lightning",
+              "Rarity": "Rare"
+            }
+          ]
+        }
+      },
+      "PointPools": {
+        "Weapon Stats": {
+          "TotalPoints": 40,
+          "MinPerAttribute": 2,
+          "MaxPerAttribute": 15,
+          "Attributes": [ "Sharpness", "Lethality", "Durability", "Weight" ]
+        }
+      }
+    }
+  },
+  "BioTemplates": {
+    "1_Origin": [
+      {
+        "Text": "{Full} was forged in the volcanic fires of Mount Doom.",
+        "Requires": "Fire",
+        "Weight": 10
+      },
+      {
+        "Text": "{Full} is a standard-issue blade from the Royal Guard.",
+        "Weight": 10
+      },
+      {
+        "Text": "{Full} is a terrifying anomaly of {Blade Material} that should not exist.",
+        "Requires": "LEGENDARY",
+        "Weight": 10
+      }
+    ],
+    "2_Capability": [
+      {
+        "Text": "The edge of {Nick} is so fine it can split a single hair falling through the air.",
+        "MinStatName": "Sharpness",
+        "MinStatValue": 14,
+        "Weight": 50
+      },
+      {
+        "Text": "Despite its power, {Nick} is incredibly cumbersome and requires a titan to wield.",
+        "MinStatName": "Weight",
+        "MinStatValue": 14,
+        "Weight": 50
+      },
+      {
+        "Text": "It is a reliable, if unremarkable, piece of iron.",
+        "Weight": 10
+      }
+    ],
+    "3_Sentience": [
+      {
+        "Text": "The blade constantly thirsts for battle, whispering dark thoughts to its wielder.",
+        "Requires": "Sentient (Aggressive)",
+        "Weight": 10
+      },
+      {
+        "Text": "It offers calm, strategic advice during the heat of combat.",
+        "Requires": "Sentient (Wise)",
+        "Weight": 10
+      },
+      {
+        "Text": "The weapon remains cold and silent in your hand.",
+        "Requires": "Inert",
+        "Weight": 10
+      }
+    ],
+    "4_Destiny": [
+      {
+        "Text": "One day, {Full} will be used to strike the final blow of the era.",
+        "Weight": 10
+      },
+      {
+        "Text": "Because of its {Fragile} nature, it is likely to shatter in its next encounter.",
+        "Requires": "Fragile",
+        "Weight": 100
+      }
+    ]
+  }
+}

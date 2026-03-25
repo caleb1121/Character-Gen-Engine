@@ -1,0 +1,163 @@
+{
+  "UniverseName": "The Great Library: Character Portraits",
+  "Modules": {
+    "ShowRarity": true,
+    "UseNarrative": true,
+    "UsePointPools": true
+  },
+  "ArchetypeTitle": "Narrative Role",
+  "Archetypes": {
+    "The Protagonist": {
+      "NicknameChance": 0.4,
+      "GenderOdds": {
+        "Male": 45,
+        "Female": 45,
+        "Non-Binary": 10
+      },
+      "FirstNames": [
+        {
+          "Value": "Elias",
+          "Requires": "Male"
+        },
+        {
+          "Value": "Julian",
+          "Requires": "Male"
+        },
+        {
+          "Value": "Silas",
+          "Requires": "Male"
+        },
+        {
+          "Value": "Caspian",
+          "Requires": "Male"
+        },
+        {
+          "Value": "Lyra",
+          "Requires": "Female"
+        },
+        {
+          "Value": "Elara",
+          "Requires": "Female"
+        },
+        {
+          "Value": "Seraphina",
+          "Requires": "Female"
+        },
+        {
+          "Value": "Evangeline",
+          "Requires": "Female"
+        },
+        {
+          "Value": "Arlowe",
+          "Weight": 10
+        },
+        {
+          "Value": "Sutton",
+          "Weight": 10
+        }
+      ],
+      "LastNames": [ "Blackwood", "Thorne", "Sterling", "Holloway", "Vane", "Ashford", "Nightshade" ],
+      "Nicknames": [ "The Brave", "The Kind", "The Damned", "The Prophet", "Golden-Child" ],
+      "StartingTags": [ "Lead-Character" ],
+      "MandatoryTraits": {
+        "Body Build": [
+          {
+            "Value": "lanky and lean",
+            "Weight": 30,
+            "GrantsTag": "Agile"
+          },
+          {
+            "Value": "broad-shouldered and powerful",
+            "Weight": 30,
+            "GrantsTag": "Strong"
+          },
+          {
+            "Value": "slight and fragile",
+            "Weight": 20,
+            "GrantsTag": "Delicate"
+          },
+          {
+            "Value": "stocky and enduring",
+            "Weight": 20,
+            "GrantsTag": "Tough"
+          }
+        ],
+        "Eye Color": [ "piercing emerald", "cold flint-grey", "warm amber", "mismatched sapphire and gold" ],
+        "Facial Feature": [ "a sharp, aristocratic jawline", "a nose broken many times", "high, wind-swept cheekbones", "a heavy, thoughtful brow" ]
+      },
+      "OptionalTraits": {
+        "Markings": {
+          "Chance": 0.4,
+          "Options": [
+            {
+              "Value": "a jagged scar across the left eye",
+              "GrantsTag": "Battle-Scarred"
+            },
+            {
+              "Value": "a constellation of freckles",
+              "Weight": 10
+            }
+          ]
+        }
+      },
+      "PointPools": {
+        "Physicality": {
+          "TotalPoints": 45,
+          "MinPerAttribute": 5,
+          "MaxPerAttribute": 18,
+          "Attributes": [ "Strength", "Agility", "Presence" ]
+        }
+      }
+    }
+  },
+  "BioTemplates": {
+    "1_Introduction": [
+      {
+        "Text": "{Full} stands before you, a figure defined by {Possessive} {Body Build}.",
+        "Weight": 10
+      }
+    ],
+    "2_The_Body": [
+      {
+        "Text": "{Subject} possesses a towering physical presence, muscles rippling like corded iron beneath {Possessive} skin.",
+        "MinStatName": "Strength",
+        "MinStatValue": 16,
+        "Weight": 50
+      },
+      {
+        "Text": "{Subject} moves with a cat-like grace, every step silent and calculated, a testament to {Possessive} {Agile} nature.",
+        "Requires": "Agile",
+        "MinStatName": "Agility",
+        "MinStatValue": 15,
+        "Weight": 50
+      },
+      {
+        "Text": "There is a quiet, unassuming quality to the way {Subject} holds {Object}self.",
+        "Weight": 10
+      }
+    ],
+    "3_The_Face": [
+      {
+        "Text": "The first thing anyone notices are {Possessive} {Eye Color} eyes, which seem to hold a depth of ancient wisdom.",
+        "MinStatName": "Presence",
+        "MinStatValue": 14,
+        "Weight": 10
+      },
+      {
+        "Text": "{Possessive} face is marked by {Facial Feature}, often shadowed by a look of intense concentration.",
+        "Weight": 10
+      },
+      {
+        "Text": "Adding to {Possessive} striking appearance is {OptionalTraits: Markings}.",
+        "Requires": "Battle-Scarred",
+        "Weight": 100
+      }
+    ],
+    "4_Closing": [
+      {
+        "Text": "To look upon {Nick} is to see a character shaped by the very world {Subject} seeks to change.",
+        "Weight": 10
+      }
+    ]
+  }
+}

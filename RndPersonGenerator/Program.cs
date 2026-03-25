@@ -6,7 +6,7 @@ using System.Linq;
 // 1. SPLASH SCREEN & INITIALIZATION
 // ==========================================================
 
-Console.Title = "Reality Engine v0.5";
+Console.Title = "Reality Engine v0.65";
 Console.ForegroundColor = ConsoleColor.Cyan;
 
 Console.WriteLine(@"
@@ -21,7 +21,7 @@ Console.WriteLine(@"
 Console.ForegroundColor = ConsoleColor.Gray;
 Console.WriteLine(" --------------------------------------------------------------------------");
 Console.WriteLine("                       [ UNIVERSAL CHARACTER ENGINE ]                      ");
-Console.WriteLine("                                Version 0.5                                ");
+Console.WriteLine("                                Version 0.65                               ");
 Console.WriteLine(" --------------------------------------------------------------------------");
 Console.WriteLine("\n\n        >> SYSTEM INITIALIZED. PRESS ANY KEY TO ENTER THE GRID <<        ");
 Console.ResetColor();
@@ -41,7 +41,7 @@ while (keepRunning)
 {
     Console.Clear();
     Console.ForegroundColor = ConsoleColor.Cyan;
-    Console.WriteLine("--- REALITY ENGINE v0.5 ---");
+    Console.WriteLine("--- REALITY ENGINE v0.65 ---");
     Console.ResetColor();
 
     string status = activeModule == null ? "None (Please load a module)" : activeModule.UniverseName;
@@ -64,25 +64,11 @@ while (keepRunning)
                 System.Threading.Thread.Sleep(1000);
                 LoadModuleFlow();
             }
-            else
-            {
-                GenerateEntity(activeModule, rand);
-            }
+            else { GenerateEntity(activeModule, rand); }
             break;
-
-        case "2":
-            LoadModuleFlow();
-            break;
-
-        case "3":
-            ShowInstructions();
-            break;
-
-        case "4":
-            keepRunning = false;
-            ExitProgram();
-            break;
-
+        case "2": LoadModuleFlow(); break;
+        case "3": ShowInstructions(); break;
+        case "4": keepRunning = false; ExitProgram(); break;
         default:
             Console.WriteLine("Invalid selection.");
             System.Threading.Thread.Sleep(500);
@@ -113,13 +99,8 @@ void LoadModuleFlow()
         Console.WriteLine($"Archetypes Found: {activeModule.Archetypes.Count}");
         foreach (var arch in activeModule.Archetypes)
         {
-            int traitCount = arch.Value.MandatoryTraits?.Count ?? 0;
-            int optCount = arch.Value.OptionalTraits?.Count ?? 0;
-            int nameCount = arch.Value.Names?.Count ?? 0;
-            int poolCount = arch.Value.PointPools?.Count ?? 0;
-
             Console.WriteLine($"> {arch.Key}:");
-            Console.WriteLine($"  - {nameCount} names | {traitCount} mandatory | {optCount} optional | {poolCount} pools");
+            Console.WriteLine($"  - {arch.Value.FirstNames?.Count ?? 0} First | {arch.Value.LastNames?.Count ?? 0} Last | {arch.Value.Nicknames?.Count ?? 0} Nicks");
         }
 
         Console.WriteLine("\nSystem Ready. Press any key to return to menu...");
@@ -155,9 +136,31 @@ static void GenerateEntity(UniverseData data, Random rand)
     if (archetype.StartingTags != null) activeTags.AddRange(archetype.StartingTags);
     entity.Attributes.Add(data.ArchetypeTitle, selectedTypeName);
 
-    // 2. ROLL NAME
-    SmartOption pickedName = PickSmart(archetype.Names, activeTags, rand);
-    entity.Name = pickedName.Value;
+    // 1. ROLL GENDER & PRONOUNS
+    if (archetype.GenderOdds != null && archetype.GenderOdds.Count > 0)
+    {
+        int totalGenderWeight = archetype.GenderOdds.Values.Sum();
+        int genderRoll = rand.Next(0, totalGenderWeight);
+        int cursor = 0;
+        foreach (var entry in archetype.GenderOdds)
+        {
+            cursor += entry.Value;
+            if (genderRoll < cursor) { entity.Gender = entry.Key; break; }
+        }
+    }
+    else { entity.Gender = "Neutral"; }
+
+    activeTags.Add(entity.Gender);
+    AssignPronouns(entity);
+
+    // 2. ROLL NAMES
+    entity.FirstName = PickSmart(archetype.FirstNames, activeTags, rand).Value;
+    entity.LastName = PickSmart(archetype.LastNames, activeTags, rand).Value;
+
+    if (archetype.Nicknames != null && rand.NextDouble() < archetype.NicknameChance)
+        entity.Nickname = PickSmart(archetype.Nicknames, activeTags, rand).Value;
+    else
+        entity.Nickname = "";
 
     // 3. ROLL MANDATORY TRAITS
     if (archetype.MandatoryTraits != null)
@@ -165,9 +168,8 @@ static void GenerateEntity(UniverseData data, Random rand)
         foreach (var trait in archetype.MandatoryTraits)
         {
             SmartOption picked = PickSmart(trait.Value, activeTags, rand);
-            bool canShowRarity = data.ShowRarity && !string.IsNullOrEmpty(picked.Rarity);
+            bool canShowRarity = data.Modules.ShowRarity && !string.IsNullOrEmpty(picked.Rarity);
             string displayValue = canShowRarity ? $"{picked.Value} [{picked.Rarity}]" : picked.Value;
-
             entity.Attributes.Add(trait.Key, displayValue);
         }
     }
@@ -180,16 +182,15 @@ static void GenerateEntity(UniverseData data, Random rand)
             if (rand.NextDouble() < trait.Value.Chance)
             {
                 SmartOption picked = PickSmart(trait.Value.Options, activeTags, rand);
-                bool canShowRarity = data.ShowRarity && !string.IsNullOrEmpty(picked.Rarity);
+                bool canShowRarity = data.Modules.ShowRarity && !string.IsNullOrEmpty(picked.Rarity);
                 string displayValue = canShowRarity ? $"{picked.Value} [{picked.Rarity}]" : picked.Value;
-
                 entity.Attributes.Add(trait.Key, displayValue);
             }
         }
     }
 
     // 5. POINT POOLS
-    if (archetype.PointPools != null)
+    if (data.Modules.UsePointPools && archetype.PointPools != null)
     {
         foreach (var poolEntry in archetype.PointPools)
         {
@@ -221,7 +222,83 @@ static void GenerateEntity(UniverseData data, Random rand)
     }
 
     entity.Tags = activeTags.Distinct().ToList();
+
+    // 6. NARRATIVE GENERATION (Upgraded with Stat-Checks)
+    if (data.Modules.UseNarrative)
+        entity.Story = ConstructStory(entity, data, rand);
+
     DisplayEntity(entity, data.UniverseName);
+}
+
+static void AssignPronouns(GeneratedEntity entity)
+{
+    switch (entity.Gender.ToLower())
+    {
+        case "male":
+            entity.Pronouns = new Dictionary<string, string> { { "Subject", "he" }, { "Object", "him" }, { "Possessive", "his" } };
+            break;
+        case "female":
+            entity.Pronouns = new Dictionary<string, string> { { "Subject", "she" }, { "Object", "her" }, { "Possessive", "her" } };
+            break;
+        default:
+            entity.Pronouns = new Dictionary<string, string> { { "Subject", "they" }, { "Object", "them" }, { "Possessive", "their" } };
+            break;
+    }
+}
+
+static string ConstructStory(GeneratedEntity entity, UniverseData data, Random rand)
+{
+    if (data.BioTemplates == null) return null;
+    List<string> storyBits = new List<string>();
+
+    foreach (var category in data.BioTemplates)
+    {
+        // FILTER: Check Tag Requirements AND Stat Thresholds
+        var validTemplates = category.Value.Where(t =>
+        {
+            bool tagMet = string.IsNullOrEmpty(t.Requires) || entity.Tags.Contains(t.Requires);
+            bool statMet = true;
+
+            if (!string.IsNullOrEmpty(t.MinStatName))
+            {
+                var statEntry = entity.Attributes.FirstOrDefault(a => a.Key.EndsWith(t.MinStatName));
+                if (statEntry.Key != null && int.TryParse(statEntry.Value, out int score))
+                {
+                    statMet = score >= t.MinStatValue;
+                }
+                else { statMet = false; }
+            }
+            return tagMet && statMet;
+        }).ToList();
+
+        if (validTemplates.Count == 0) continue;
+
+        int totalWeight = validTemplates.Sum(t => t.Weight);
+        int roll = rand.Next(0, totalWeight);
+        int cursor = 0;
+        string pickedText = "";
+
+        foreach (var t in validTemplates)
+        {
+            cursor += t.Weight;
+            if (roll < cursor) { pickedText = t.Text; break; }
+        }
+
+        if (string.IsNullOrEmpty(pickedText)) pickedText = validTemplates[0].Text;
+
+        // Placeholders
+        pickedText = pickedText.Replace("{First}", entity.FirstName)
+                               .Replace("{Last}", entity.LastName)
+                               .Replace("{Nick}", entity.NicknameOrFirst)
+                               .Replace("{Full}", entity.FullName)
+                               .Replace("{Gender}", entity.Gender);
+
+        foreach (var p in entity.Pronouns) { pickedText = pickedText.Replace($"{{{p.Key}}}", p.Value); }
+        foreach (var attr in entity.Attributes) { pickedText = pickedText.Replace($"{{{attr.Key}}}", attr.Value); }
+
+        storyBits.Add(pickedText);
+    }
+    return string.Join(" ", storyBits);
 }
 
 static void DisplayEntity(GeneratedEntity entity, string universeName)
@@ -229,17 +306,23 @@ static void DisplayEntity(GeneratedEntity entity, string universeName)
     Console.Clear();
     Console.ForegroundColor = ConsoleColor.Cyan;
     Console.WriteLine("==================================================");
-    Console.WriteLine($"   IDENTIFICATION: {entity.Name.ToUpper()}");
-
+    Console.WriteLine($"   IDENTIFICATION: {entity.FullName.ToUpper()}");
+    Console.WriteLine($"   GENDER: {entity.Gender}");
     if (entity.Tags.Count > 0)
     {
         Console.ForegroundColor = ConsoleColor.DarkGray;
         Console.WriteLine($"   TAGS: {string.Join(", ", entity.Tags)}");
     }
-
     Console.ForegroundColor = ConsoleColor.Cyan;
     Console.WriteLine("==================================================");
     Console.ResetColor();
+
+    if (!string.IsNullOrEmpty(entity.Story))
+    {
+        Console.WriteLine("\n--- DATA LOG ---");
+        Console.WriteLine(entity.Story);
+        Console.WriteLine("----------------");
+    }
 
     Console.WriteLine("\n--- CORE ATTRIBUTES ---");
     foreach (var attr in entity.Attributes.Where(a => !a.Key.Contains(":")))
@@ -257,12 +340,8 @@ static void DisplayEntity(GeneratedEntity entity, string universeName)
 
     Console.WriteLine("\n==================================================");
     Console.WriteLine("Press 'S' to Save or any other key to return...");
-
     ConsoleKeyInfo key = Console.ReadKey(true);
-    if (key.Key == ConsoleKey.S)
-    {
-        SaveEntityToFile(entity, universeName);
-    }
+    if (key.Key == ConsoleKey.S) { SaveEntityToFile(entity, universeName); }
 }
 
 // ==========================================================
@@ -276,19 +355,19 @@ static void SaveEntityToFile(GeneratedEntity entity, string universeName)
     if (!Directory.Exists(universeFolder)) Directory.CreateDirectory(universeFolder);
 
     string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
-    string fileName = $"{entity.Name.Replace(" ", "_")}_{timestamp}.txt";
+    string fileName = $"{entity.FullName.Replace(" ", "_")}_{timestamp}.txt";
     string fullPath = Path.Combine(universeFolder, fileName);
 
     using (StreamWriter writer = new StreamWriter(fullPath))
     {
         writer.WriteLine("==================================================");
-        writer.WriteLine($"   CHARACTER RECORD: {entity.Name.ToUpper()}");
-        writer.WriteLine($"   UNIVERSE: {universeName}");
+        writer.WriteLine($"   CHARACTER RECORD: {entity.FullName.ToUpper()}");
+        writer.WriteLine($"   GENDER: {entity.Gender}");
         writer.WriteLine($"   TAGS: {string.Join(", ", entity.Tags)}");
         writer.WriteLine($"   GENERATED: {DateTime.Now}");
         writer.WriteLine("==================================================");
-
-        writer.WriteLine("\n[ CORE ATTRIBUTES ]");
+        if (!string.IsNullOrEmpty(entity.Story)) { writer.WriteLine($"\n[ BIOGRAPHY ]\n{entity.Story}\n"); }
+        writer.WriteLine("[ CORE ATTRIBUTES ]");
         foreach (var attr in entity.Attributes.Where(a => !a.Key.Contains(":")))
             writer.WriteLine($"{attr.Key.PadRight(20)}: {attr.Value}");
 
@@ -299,9 +378,7 @@ static void SaveEntityToFile(GeneratedEntity entity, string universeName)
             foreach (var item in group)
                 writer.WriteLine($"{item.Key.Split(':')[1].Trim().PadRight(20)}: {item.Value}");
         }
-        writer.WriteLine("\n==================================================");
     }
-
     Console.WriteLine($"\n[SUCCESS] Saved to: {fullPath}");
     System.Threading.Thread.Sleep(1500);
 }
@@ -320,13 +397,59 @@ static string SelectUniverse()
 
 static void ShowInstructions()
 {
-    string filePath = Path.Combine("Docs", "Instructions.txt");
-    if (File.Exists(filePath))
+    string folder = "Docs";
+    if (!Directory.Exists(folder))
     {
-        Console.Clear();
-        Console.WriteLine(File.ReadAllText(filePath));
-        Console.WriteLine("\nPress any key to return...");
+        Console.WriteLine("\n[ERROR] Docs folder not found. Please create a 'Docs' folder.");
         Console.ReadKey();
+        return;
+    }
+
+    // Sort files alphabetically to ensure 00_Start, 01_Level1, etc.
+    string[] files = Directory.GetFiles(folder, "*.txt").OrderBy(f => f).ToArray();
+
+    bool stayInHelp = true;
+    while (stayInHelp)
+    {
+        Console.Clear(); // Clear before redrawing menu
+        Console.ForegroundColor = ConsoleColor.Cyan;
+        Console.WriteLine("==================================================");
+        Console.WriteLine("          REALITY ENGINE: HELP LIBRARY            ");
+        Console.WriteLine("==================================================");
+        Console.ResetColor();
+
+        for (int i = 0; i < files.Length; i++)
+        {
+            string fileName = Path.GetFileNameWithoutExtension(files[i]).Replace("_", " ");
+            Console.WriteLine($"{i + 1}. {fileName}");
+        }
+        Console.WriteLine($"{files.Length + 1}. [ Back to Main Menu ]");
+
+        Console.Write("\nSelect a module to study: ");
+        string input = Console.ReadLine();
+
+        if (int.TryParse(input, out int choice))
+        {
+            if (choice > 0 && choice <= files.Length)
+            {
+                // THE FIX: Explicitly clear the screen BEFORE printing the new file
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Gray;
+
+                // Read and display the specific file
+                string content = File.ReadAllText(files[choice - 1]);
+                Console.WriteLine(content);
+
+                Console.ResetColor();
+                Console.WriteLine("\n--------------------------------------------------");
+                Console.WriteLine(">> Press any key to return to the Help Library...");
+                Console.ReadKey(true); // 'true' prevents the key character from printing
+            }
+            else if (choice == files.Length + 1)
+            {
+                stayInHelp = false;
+            }
+        }
     }
 }
 
@@ -385,26 +508,55 @@ static SmartOption PickSmart(List<JsonElement> elements, List<string> activeTags
 
 public class GeneratedEntity
 {
-    public string Name { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public string Nickname { get; set; }
+    public string Gender { get; set; }
+    public Dictionary<string, string> Pronouns { get; set; } = new Dictionary<string, string>();
     public Dictionary<string, string> Attributes { get; set; } = new Dictionary<string, string>();
     public List<string> Tags { get; set; } = new List<string>();
+    public string Story { get; set; }
+
+    public string FullName => string.IsNullOrEmpty(Nickname) ? $"{FirstName} {LastName}" : $"{FirstName} '{Nickname}' {LastName}";
+    public string NicknameOrFirst => string.IsNullOrEmpty(Nickname) ? FirstName : Nickname;
 }
 
 public class UniverseData
 {
     public string UniverseName { get; set; }
+    public ModuleSettings Modules { get; set; } = new ModuleSettings();
     public string ArchetypeTitle { get; set; }
-    public bool ShowRarity { get; set; } = true;
     public Dictionary<string, EntityArchetype> Archetypes { get; set; }
+    public Dictionary<string, List<StoryTemplate>> BioTemplates { get; set; }
+}
+
+public class ModuleSettings
+{
+    public bool ShowRarity { get; set; } = true;
+    public bool UseNarrative { get; set; } = true;
+    public bool UsePointPools { get; set; } = true;
 }
 
 public class EntityArchetype
 {
-    public List<JsonElement> Names { get; set; }
+    public List<JsonElement> FirstNames { get; set; }
+    public List<JsonElement> LastNames { get; set; }
+    public List<JsonElement> Nicknames { get; set; }
+    public double NicknameChance { get; set; } = 0.5;
+    public Dictionary<string, int> GenderOdds { get; set; }
     public List<string> StartingTags { get; set; } = new List<string>();
     public Dictionary<string, List<JsonElement>> MandatoryTraits { get; set; }
     public Dictionary<string, ProbabilityTrait> OptionalTraits { get; set; }
     public Dictionary<string, PointPool> PointPools { get; set; }
+}
+
+public class StoryTemplate
+{
+    public string Text { get; set; }
+    public int Weight { get; set; } = 1;
+    public string Requires { get; set; }
+    public string MinStatName { get; set; }
+    public int MinStatValue { get; set; } = 0;
 }
 
 public class ProbabilityTrait

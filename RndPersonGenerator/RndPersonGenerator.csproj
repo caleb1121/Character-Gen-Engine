@@ -8,19 +8,28 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Update="Docs\Instructions.txt">
+    <None Update="Docs\2. Basic Randomization (Simple lists).txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="UniverseFiles\EmptyTemplate.json">
+    <None Update="Docs\5. Narrative Elite (Stat-gated storytelling).txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="UniverseFiles\Modern Life.json">
+    <None Update="Docs\4. Logic &amp; Stats (Tags and RPG math).txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="UniverseFiles\NeonSyndicate(complex).json">
+    <None Update="Docs\3. Weights &amp; Rarity (Simulating scarcity).txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="UniverseFiles\Whispering Woods.json">
+    <None Update="Docs\1. Begin your journey.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="UniverseFiles\Armoury.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="UniverseFiles\Character Portraits.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="UniverseFiles\Chronicles of Aetheria.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

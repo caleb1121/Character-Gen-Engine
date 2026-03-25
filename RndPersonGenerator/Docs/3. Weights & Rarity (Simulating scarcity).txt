@@ -1,0 +1,67 @@
+==========================================================================
+                LEVEL 2: WEIGHTS & RARITY (Medium)
+==========================================================================
+GOAL: Control the "feel" of your world and simulate scarcity.
+
+In Level 1, every item had an equal chance. In Level 2, we use "Weighted 
+Probability." This allows you to make a "Rusty Dagger" appear 99% of the 
+time while a "Dragon Blade" only appears 1% of the time.
+
+--------------------------------------------------------------------------
+1. THE SHIFT: FROM STRINGS TO OBJECTS
+--------------------------------------------------------------------------
+Instead of a simple list of words like ["Sword", "Axe"], we now use 
+Curly Braces { } to give the engine more information about each item.
+
+NEW KEYS:
+* Value: The actual name of the item.
+* Weight: A number representing how "heavy" (common) the item is.
+* Rarity: A custom label (Common, Rare, Legendary, etc.).
+
+--------------------------------------------------------------------------
+2. UNDERSTANDING WEIGHTS
+--------------------------------------------------------------------------
+Think of weights like "Raffle Tickets." If a Rusty Spoon has 100 tickets 
+and a Laser Sword has 1 ticket, the engine puts all 101 tickets in a hat. 
+The Spoon is 100x more likely to be picked.
+
+* High Weight (e.g., 50-100): Common trash, basic gear.
+* Low Weight (e.g., 1-5): Rare treasures, elite titles.
+
+--------------------------------------------------------------------------
+3. SHOWING RARITY
+--------------------------------------------------------------------------
+In your "Modules" block at the top of the JSON, you must set:
+"ShowRarity": true
+
+If this is true, the engine will display the rarity label in brackets 
+next to the item (e.g., Laser Sword [LEGENDARY]).
+
+--------------------------------------------------------------------------
+🚀 LEVEL 2 EXAMPLE (Copy-Paste Ready)
+--------------------------------------------------------------------------
+{
+  "UniverseName": "Loot Hunter Alpha",
+  "Modules": { "ShowRarity": true, "UseNarrative": false },
+  "ArchetypeTitle": "Scavenger",
+  "Archetypes": {
+    "Wastelander": {
+      "FirstNames": ["Dusty", "Cinder", "Jax"],
+      "LastNames": ["Scrap", "Waste", "Rad"],
+      "MandatoryTraits": {
+        "Starting Weapon": [
+          { "Value": "Sharpened Rebar", "Weight": 80, "Rarity": "Common" },
+          { "Value": "Old Revolver", "Weight": 15, "Rarity": "Rare" },
+          { "Value": "Plasma Cutter", "Weight": 5, "Rarity": "EPIC" }
+        ]
+      }
+    }
+  }
+}
+
+--------------------------------------------------------------------------
+💡 PRO TIP: THE BALANCE
+--------------------------------------------------------------------------
+You can mix and match! You can have a simple list for names but a 
+weighted list for weapons. The engine is smart enough to read both.
+==========================================================================

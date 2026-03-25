@@ -1,0 +1,699 @@
+{
+  "UniverseName": "Chronicles of Aetheria: The Infinite Age",
+  "Modules": {
+    "ShowRarity": true,
+    "UseNarrative": true,
+    "UsePointPools": true
+  },
+  "ArchetypeTitle": "Heroic Path",
+  "Archetypes": {
+    "Highland Knight": {
+      "NicknameChance": 0.5,
+      "GenderOdds": {
+        "Male": 48,
+        "Female": 48,
+        "Non-Binary": 4
+      },
+      "FirstNames": [
+        {
+          "Value": "Alaric",
+          "Requires": "Male"
+        },
+        {
+          "Value": "Gareth",
+          "Requires": "Male"
+        },
+        {
+          "Value": "Roland",
+          "Requires": "Male"
+        },
+        {
+          "Value": "Cedric",
+          "Requires": "Male"
+        },
+        {
+          "Value": "Arthur",
+          "Requires": "Male"
+        },
+        {
+          "Value": "Percival",
+          "Requires": "Male"
+        },
+        {
+          "Value": "Tristan",
+          "Requires": "Male"
+        },
+        {
+          "Value": "Galahad",
+          "Requires": "Male"
+        },
+        {
+          "Value": "Lancelot",
+          "Requires": "Male"
+        },
+        {
+          "Value": "Bors",
+          "Requires": "Male"
+        },
+        {
+          "Value": "Kay",
+          "Requires": "Male"
+        },
+        {
+          "Value": "Bedivere",
+          "Requires": "Male"
+        },
+        {
+          "Value": "Gaheris",
+          "Requires": "Male"
+        },
+        {
+          "Value": "Agravain",
+          "Requires": "Male"
+        },
+        {
+          "Value": "Palamedes",
+          "Requires": "Male"
+        },
+        {
+          "Value": "Lamorak",
+          "Requires": "Male"
+        },
+        {
+          "Value": "Geraint",
+          "Requires": "Male"
+        },
+        {
+          "Value": "Sagramore",
+          "Requires": "Male"
+        },
+        {
+          "Value": "Lucan",
+          "Requires": "Male"
+        },
+        {
+          "Value": "Dagonet",
+          "Requires": "Male"
+        },
+        {
+          "Value": "Valerius",
+          "Requires": "Male"
+        },
+        {
+          "Value": "Uther",
+          "Requires": "Male"
+        },
+        {
+          "Value": "Titus",
+          "Requires": "Male"
+        },
+        {
+          "Value": "Cato",
+          "Requires": "Male"
+        },
+        {
+          "Value": "Brutus",
+          "Requires": "Male"
+        },
+        {
+          "Value": "Morgaine",
+          "Requires": "Female"
+        },
+        {
+          "Value": "Elara",
+          "Requires": "Female"
+        },
+        {
+          "Value": "Isolde",
+          "Requires": "Female"
+        },
+        {
+          "Value": "Guinevere",
+          "Requires": "Female"
+        },
+        {
+          "Value": "Enid",
+          "Requires": "Female"
+        },
+        {
+          "Value": "Elaine",
+          "Requires": "Female"
+        },
+        {
+          "Value": "Nimue",
+          "Requires": "Female"
+        },
+        {
+          "Value": "Viviane",
+          "Requires": "Female"
+        },
+        {
+          "Value": "Igraine",
+          "Requires": "Female"
+        },
+        {
+          "Value": "Morgause",
+          "Requires": "Female"
+        },
+        {
+          "Value": "Lyonesse",
+          "Requires": "Female"
+        },
+        {
+          "Value": "Olwen",
+          "Requires": "Female"
+        },
+        {
+          "Value": "Laudine",
+          "Requires": "Female"
+        },
+        {
+          "Value": "Lunete",
+          "Requires": "Female"
+        },
+        {
+          "Value": "Branwen",
+          "Requires": "Female"
+        },
+        {
+          "Value": "Arianrhod",
+          "Requires": "Female"
+        },
+        {
+          "Value": "Rhiannon",
+          "Requires": "Female"
+        },
+        {
+          "Value": "Blodeuwedd",
+          "Requires": "Female"
+        },
+        {
+          "Value": "Valeria",
+          "Requires": "Female"
+        },
+        {
+          "Value": "Lucilla",
+          "Requires": "Female"
+        },
+        {
+          "Value": "Drusilla",
+          "Requires": "Female"
+        },
+        {
+          "Value": "Octavia",
+          "Requires": "Female"
+        },
+        {
+          "Value": "Livia",
+          "Requires": "Female"
+        },
+        {
+          "Value": "Aurelia",
+          "Requires": "Female"
+        },
+        {
+          "Value": "Seraphina",
+          "Requires": "Female"
+        },
+        {
+          "Value": "Justice",
+          "Weight": 10
+        },
+        {
+          "Value": "Honor",
+          "Weight": 10
+        },
+        {
+          "Value": "Valiant",
+          "Weight": 10
+        },
+        {
+          "Value": "Skye",
+          "Weight": 10
+        },
+        {
+          "Value": "Rowan",
+          "Weight": 10
+        }
+      ],
+      "LastNames": [
+        "Ironfoot",
+        "Stormborn",
+        "Lightbringer",
+        "of Oakhaven",
+        "Drakenheart",
+        "Silvershield",
+        "Oakmantle",
+        "Stonegrasper",
+        "Wyrmslayer",
+        "Brightblade",
+        "Nightwatcher",
+        "Gloryseeker",
+        "Shieldwall",
+        "Goldspur",
+        "Ironwill",
+        "Steelbound",
+        "Truestrike",
+        "Boldheart",
+        "Highfall",
+        "Clearwater",
+        "Redbane",
+        "Grimward",
+        "Peacekeeper",
+        "Sunstrider",
+        "Winterborn",
+        "Shadowbane",
+        "Lionheart",
+        "Eagle-Eye",
+        "Wolf-Kin",
+        "Bear-Claw",
+        "Falcon-Wing",
+        "Stag-Horn",
+        "Boar-Tusk",
+        "Fox-Tail",
+        "Raven-Feather",
+        "Owl-Sight",
+        "Serpent-Scale",
+        "Dragon-Fire",
+        "Phoenix-Down",
+        "Griffin-Claw"
+      ],
+      "Nicknames": [
+        "The Brave",
+        "The Lion",
+        "Dragon-Bane",
+        "The Wall",
+        "Iron-Giant",
+        "The Stalwart",
+        "Giant-Slayer",
+        "The Bold",
+        "The Unyielding",
+        "Shield of the Realm",
+        "The Defender",
+        "The Just",
+        "The Merciful",
+        "The Fierce",
+        "The Silent",
+        "The Warden",
+        "The Vanguard",
+        "The Sentinel",
+        "The Protector",
+        "The Guardian",
+        "The Knight-Commander",
+        "The Grandmaster",
+        "The Exemplar",
+        "The Beacon",
+        "The Sword of Dawn",
+        "The Hammer of Justice",
+        "The Shield of Faith",
+        "The Armor of God"
+      ],
+      "StartingTags": [ "Noble-Blood", "Martial-Training" ],
+      "MandatoryTraits": {
+        "Noble House": [
+          "House Arryn",
+          "House Baratheon",
+          "House Stark",
+          "House Lannister",
+          "House Tyrell",
+          "House Martell",
+          "House Tully",
+          "House Greyjoy",
+          "House Targaryen",
+          "House Dayne",
+          "House Hightower",
+          "House Mormont",
+          "House Tarly",
+          "House Umber",
+          "House Glover",
+          "House Karstark",
+          "House Bolton",
+          "House Frey",
+          "House Reed",
+          "House Mallister"
+        ],
+        "Signature Weapon": [
+          {
+            "Value": "Steel Longsword",
+            "Weight": 50,
+            "Rarity": "Common"
+          },
+          {
+            "Value": "Heavy Warhammer",
+            "Weight": 30,
+            "Rarity": "Common"
+          },
+          {
+            "Value": "Halberd of the Guard",
+            "Weight": 20,
+            "Rarity": "Uncommon"
+          },
+          {
+            "Value": "The Ancestral Blade",
+            "Weight": 5,
+            "GrantsTag": "Relic-Bearer",
+            "Rarity": "Epic"
+          },
+          {
+            "Value": "Star-Forged Claymore",
+            "Weight": 1,
+            "GrantsTag": "Radiant",
+            "Rarity": "MYTHIC"
+          }
+        ]
+      },
+      "PointPools": {
+        "Attributes": {
+          "TotalPoints": 75,
+          "MinPerAttribute": 8,
+          "MaxPerAttribute": 18,
+          "Attributes": [ "Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma" ]
+        }
+      }
+    },
+    "Aether-Weaver Wizard": {
+      "NicknameChance": 0.8,
+      "GenderOdds": {
+        "Male": 33,
+        "Female": 33,
+        "Non-Binary": 34
+      },
+      "FirstNames": [
+        {
+          "Value": "Zephyrus",
+          "Requires": "Male"
+        },
+        {
+          "Value": "Thorne",
+          "Requires": "Male"
+        },
+        {
+          "Value": "Magnus",
+          "Requires": "Male"
+        },
+        {
+          "Value": "Balthazar",
+          "Requires": "Male"
+        },
+        {
+          "Value": "Alistair",
+          "Requires": "Male"
+        },
+        {
+          "Value": "Xerxes",
+          "Requires": "Male"
+        },
+        {
+          "Value": "Prospero",
+          "Requires": "Male"
+        },
+        {
+          "Value": "Merlin",
+          "Requires": "Male"
+        },
+        {
+          "Value": "Gandalf",
+          "Requires": "Male"
+        },
+        {
+          "Value": "Saruman",
+          "Requires": "Male"
+        },
+        {
+          "Value": "Lysandra",
+          "Requires": "Female"
+        },
+        {
+          "Value": "Azura",
+          "Requires": "Female"
+        },
+        {
+          "Value": "Circe",
+          "Requires": "Female"
+        },
+        {
+          "Value": "Morgana",
+          "Requires": "Female"
+        },
+        {
+          "Value": "Hecate",
+          "Requires": "Female"
+        },
+        {
+          "Value": "Tessa",
+          "Requires": "Female"
+        },
+        {
+          "Value": "Yennefer",
+          "Requires": "Female"
+        },
+        {
+          "Value": "Triss",
+          "Requires": "Female"
+        },
+        {
+          "Value": "Philippa",
+          "Requires": "Female"
+        },
+        {
+          "Value": "Keira",
+          "Requires": "Female"
+        },
+        {
+          "Value": "Sage",
+          "Weight": 10
+        },
+        {
+          "Value": "Arcane",
+          "Weight": 10
+        },
+        {
+          "Value": "Mythos",
+          "Weight": 10
+        },
+        {
+          "Value": "Aether",
+          "Weight": 10
+        },
+        {
+          "Value": "Oracle",
+          "Weight": 10
+        }
+      ],
+      "LastNames": [ "Greyweaver", "the Wandering", "Star-Gazer", "Void-Walker", "Aether-Touched", "Spellbound", "Runescriber", "Mana-Drift", "Storm-Caller", "Crystal-Eyes" ],
+      "Nicknames": [ "The Mad", "Silver-Tongue", "Owl-Eye", "The Wise", "The Ancient", "The Prophet", "The Archmage", "The Sorcerer", "The Warlock", "The Necromancer" ],
+      "StartingTags": [ "Arcane-Gift", "Pauper" ],
+      "MandatoryTraits": {
+        "Magic School": [ "Pyromancy", "Cryomancy", "Electromancy", "Necromancy", "Alchemy", "Divination", "Chronomancy", "Illusion", "Abjuration", "Conjuration" ],
+        "Focus Tool": [ "Oak Staff", "Crystal Orb", "Tattered Spellbook", "Silver Wand", "Ancient Scroll", "Runic Amulet", "Dragon Bone Focus", "Aether Lens", "Mana Ring", "Sacrificial Dagger" ]
+      },
+      "PointPools": {
+        "Attributes": {
+          "TotalPoints": 75,
+          "MinPerAttribute": 8,
+          "MaxPerAttribute": 18,
+          "Attributes": [ "Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma" ]
+        }
+      }
+    },
+    "Abyssal Horror": {
+      "NicknameChance": 0.6,
+      "GenderOdds": {
+        "Neutral": 70,
+        "Unknown": 30
+      },
+      "FirstNames": [
+        {
+          "Value": "Xul'Thul",
+          "Weight": 10
+        },
+        {
+          "Value": "Mal'Ganis",
+          "Weight": 10
+        },
+        {
+          "Value": "Gor'moth",
+          "Weight": 10
+        },
+        {
+          "Value": "Vex-Aresh",
+          "Weight": 10
+        },
+        {
+          "Value": "Ygg-Saron",
+          "Weight": 10
+        },
+        {
+          "Value": "Nyx-Athor",
+          "Weight": 10
+        },
+        {
+          "Value": "Khar-Zul",
+          "Weight": 10
+        },
+        {
+          "Value": "Zoth-Ommog",
+          "Weight": 10
+        },
+        {
+          "Value": "Shub-Niggurath",
+          "Weight": 10
+        },
+        {
+          "Value": "Cthul-Aza",
+          "Weight": 10
+        },
+        {
+          "Value": "The Swarm",
+          "Weight": 5
+        },
+        {
+          "Value": "Void-Eater",
+          "Weight": 5
+        },
+        {
+          "Value": "Soul-Flayer",
+          "Weight": 5
+        },
+        {
+          "Value": "Shadow-Lurker",
+          "Weight": 5
+        },
+        {
+          "Value": "Heart-Ripper",
+          "Weight": 5
+        }
+      ],
+      "LastNames": [ "the Eternal", "of the Abyss", "the Blight", "the Unmaker", "the Ravager", "the Corruptor", "the Ancient", "the Faceless", "the Boundless", "the Devourer" ],
+      "Nicknames": [ "The Nightmare", "The Harbinger", "The End", "The Void", "The Terror", "The Scourge", "The Beast", "The Monster", "The Thing", "The Abomination" ],
+      "StartingTags": [ "Monstrous", "Fear-Inducing", "Abyssal" ],
+      "MandatoryTraits": {
+        "Physical Mutation": [
+          {
+            "Value": "Chitinous Armor",
+            "Weight": 50,
+            "GrantsTag": "Hardened",
+            "Rarity": "Common"
+          },
+          {
+            "Value": "Spectral Wings",
+            "Weight": 20,
+            "GrantsTag": "Ethereal",
+            "Rarity": "Rare"
+          },
+          {
+            "Value": "Thousand-Eyes",
+            "Weight": 5,
+            "GrantsTag": "All-Seeing",
+            "Rarity": "Epic"
+          }
+        ],
+        "Natural Weapon": [
+          {
+            "Value": "Razor Claws",
+            "Weight": 40
+          },
+          {
+            "Value": "Venomous Stinger",
+            "Weight": 30
+          },
+          {
+            "Value": "Crushing Mandibles",
+            "Weight": 10,
+            "Requires": "Hardened"
+          },
+          {
+            "Value": "Soul-Siphon",
+            "Weight": 2,
+            "Requires": "Ethereal",
+            "Rarity": "Legendary"
+          }
+        ]
+      },
+      "PointPools": {
+        "Horror Stats": {
+          "TotalPoints": 85,
+          "MinPerAttribute": 10,
+          "MaxPerAttribute": 20,
+          "Attributes": [ "Strength", "Constitution", "Willpower", "Terror", "Instinct", "Intelligence" ]
+        }
+      }
+    }
+  },
+  "BioTemplates": {
+    "1_Heritage": [
+      {
+        "Text": "{Full} was raised in the high courts of {Noble House}.",
+        "Requires": "Noble-Blood",
+        "Weight": 10
+      },
+      {
+        "Text": "{First} {Last} spent {Possessive} youth begging for scraps in the mud of the Outer Rim.",
+        "Requires": "Pauper",
+        "Weight": 10
+      },
+      {
+        "Text": "{Full} emerged from the lightless depths of the Great Rift, a creature of pure nightmare.",
+        "Requires": "Monstrous",
+        "Weight": 10
+      }
+    ],
+    "2_Deeds": [
+      {
+        "Text": "{Nick} once wrestled a mountain troll to the ground, earning {Possessive} title through raw power.",
+        "MinStatName": "Strength",
+        "MinStatValue": 17,
+        "Weight": 50
+      },
+      {
+        "Text": "{Nick} is whispered to be a genius, having memorized the Forbidden Grimoires before age ten.",
+        "MinStatName": "Intelligence",
+        "MinStatValue": 17,
+        "Weight": 50
+      },
+      {
+        "Text": "Blades shatter against {Nick}'s form; {Subject} once walked through a storm of arrows without a scratch.",
+        "MinStatName": "Constitution",
+        "MinStatValue": 18,
+        "Weight": 50
+      },
+      {
+        "Text": "Travelers know {Nick} as a survivor who can endure any hardship.",
+        "Weight": 10
+      }
+    ],
+    "3_Artifact": [
+      {
+        "Text": "{Subject} carries {Possessive} {Signature Weapon} with a solemn vow to restore {Possessive} family name.",
+        "Requires": "Relic-Bearer",
+        "Weight": 50
+      },
+      {
+        "Text": "Few have looked upon {Possessive} {Focus Tool} and lived to tell of its flickering aetheric glow.",
+        "Requires": "Arcane-Gift",
+        "Weight": 10
+      },
+      {
+        "Text": "With {Possessive} {Physical Mutation}, {Subject} strikes terror into the hearts of any who dare cross {Possessive} path.",
+        "Requires": "Monstrous",
+        "Weight": 10
+      }
+    ],
+    "4_Destiny": [
+      {
+        "Text": "Though the road is long, {Subject} knows that {Possessive} high spirit will lead {Object} to victory.",
+        "Requires": "Noble-Blood",
+        "Weight": 10
+      },
+      {
+        "Text": "The world fears {Possessive} power, but {Subject} uses it to seek the truth.",
+        "Requires": "Arcane-Gift",
+        "Weight": 10
+      },
+      {
+        "Text": "In the end, {Nick} will either save the realms or be the spark that burns them to ash.",
+        "Weight": 10
+      }
+    ]
+  }
+}

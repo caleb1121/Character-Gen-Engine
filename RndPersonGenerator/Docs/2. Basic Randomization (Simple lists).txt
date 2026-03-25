@@ -1,0 +1,66 @@
+==========================================================================
+                LEVEL 1: THE FOUNDATION (Simple Random)
+==========================================================================
+GOAL: Create a functional universe with zero logic-headaches.
+
+At Level 1, you are building the "Skeleton" of your world. Everything is 
+handled via "Simple Lists," meaning every item in a list has an equal 
+chance of being picked (33% for a list of 3, 20% for a list of 5, etc.).
+
+--------------------------------------------------------------------------
+1. THE CORE METADATA
+--------------------------------------------------------------------------
+Every file must start with these three keys:
+
+* UniverseName: The name displayed in the engine's "Active Module" status.
+* ArchetypeTitle: The label for your classes (e.g., "Job", "Species").
+* Modules: Toggles for advanced features (Set them to true for now).
+
+--------------------------------------------------------------------------
+2. ARCHETYPES & NAMES
+--------------------------------------------------------------------------
+An Archetype is a character template. Inside an archetype, you define 
+who the character is and what they are called.
+
+* FirstNames / LastNames: Simple lists of strings.
+* MandatoryTraits: A dictionary of categories. Each category contains 
+  a list of possible results.
+
+--------------------------------------------------------------------------
+3. THE SYNTAX (The Brackets)
+--------------------------------------------------------------------------
+In JSON, square brackets [ ] mean "pick one item from this list."
+
+EXAMPLE:
+"FirstNames": ["John", "Jane", "Alex"]
+
+--------------------------------------------------------------------------
+🚀 LEVEL 1 EXAMPLE FILE (Copy-Paste Ready)
+--------------------------------------------------------------------------
+{
+  "UniverseName": "Basic Fantasy Land",
+  "Modules": { "ShowRarity": false, "UseNarrative": false },
+  "ArchetypeTitle": "Class",
+  "Archetypes": {
+    "Villager": {
+      "FirstNames": ["Pip", "Merry", "Sam"],
+      "LastNames": ["Greenleaf", "Hilltop", "Underhill"],
+      "MandatoryTraits": {
+        "Daily Tool": ["Pitchfork", "Shovel", "Bucket"],
+        "Favorite Food": ["Apple Pie", "Stale Bread", "Cheese"]
+      }
+    }
+  }
+}
+
+--------------------------------------------------------------------------
+💡 WHAT TO EXPECT
+--------------------------------------------------------------------------
+When you generate a character with this file:
+1. You select "Villager."
+2. The engine rolls "Sam" + "Hilltop."
+3. It rolls one Tool and one Food.
+4. It displays the finished character instantly.
+
+That's it! You've built your first universe.
+==========================================================================

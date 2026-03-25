@@ -1,0 +1,74 @@
+==========================================================================
+                LEVEL 4: NARRATIVE & STAT-GATING (Elite)
+==========================================================================
+GOAL: Turn raw data into a dynamic, intelligent biography.
+
+In Level 3, we built the "Body" of the character. Level 4 gives them a 
+"Voice." The Narrative Engine stitches sentences together from your 
+BioTemplates to create a cohesive life story.
+
+--------------------------------------------------------------------------
+1. THE BUCKET SYSTEM (BioTemplates)
+--------------------------------------------------------------------------
+The engine looks at your "BioTemplates" dictionary and treats each key 
+(like "1_Origin" or "2_Deeds") as a "Bucket." It picks exactly ONE 
+sentence from every bucket to build a paragraph.
+
+PRO-TIP: Name your buckets with numbers (e.g., "01_Heritage", "02_Life") 
+to ensure the story flows in the correct chronological order.
+
+--------------------------------------------------------------------------
+2. SMART PLACEHOLDERS
+--------------------------------------------------------------------------
+Use these tags within your text to inject character-specific data:
+
+PLACEHOLDER   | DESCRIPTION
+--------------|-----------------------------------------------------------
+{First}       | Character's First Name.
+{Last}        | Character's Last Name.
+{Full}        | First + (Nickname) + Last.
+{Nick}        | Uses Nickname if they have one; defaults to First Name.
+{Subject}     | he / she / they (based on rolled gender).
+{Object}      | him / her / them.
+{Possessive}  | his / her / their.
+{TraitName}   | Injects the value of a rolled trait (e.g., {Weapon}).
+
+--------------------------------------------------------------------------
+3. STAT-GATING: THE ELITE LOGIC
+--------------------------------------------------------------------------
+New in v0.65! You can now hide sentences behind a "Stat Check." A sentence 
+can require a specific attribute to reach a certain number to trigger.
+
+NEW KEYS:
+* MinStatName: The name of the attribute to check (e.g., "Strength").
+* MinStatValue: The required score (e.g., 18).
+
+This allows you to write: "The city fears {Nick}'s legendary power" 
+and ENSURE it only appears if the character actually rolled a massive 
+Strength score.
+
+--------------------------------------------------------------------------
+🚀 LEVEL 4 EXAMPLE (The Living Story)
+--------------------------------------------------------------------------
+"BioTemplates": {
+  "01_Origin": [
+    { "Text": "{Full} was raised as a noble." }
+  ],
+  "02_Deeds": [
+    { 
+      "Text": "{Nick} once killed a dragon with {Possessive} bare hands!", 
+      "MinStatName": "Strength", 
+      "MinStatValue": 18,
+      "Weight": 50 
+    },
+    { "Text": "{Subject} is known for being a quiet traveler.", "Weight": 10 }
+  ]
+}
+
+--------------------------------------------------------------------------
+💡 PRO TIP: WEIGHTED TRUTH
+--------------------------------------------------------------------------
+Give your Stat-Gated sentences a HIGHER Weight (like 50). This means 
+if a character is strong enough to "earn" the cool dragon-slayer line, 
+the engine will almost certainly pick it over the generic traveler line.
+==========================================================================
