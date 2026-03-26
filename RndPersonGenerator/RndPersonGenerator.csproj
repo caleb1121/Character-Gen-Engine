@@ -23,6 +23,9 @@
     <None Update="Docs\1. Begin your journey.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="UniverseFiles\The Andromeda Expanse.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="UniverseFiles\Armoury.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

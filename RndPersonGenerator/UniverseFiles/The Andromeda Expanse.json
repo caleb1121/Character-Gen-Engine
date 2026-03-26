@@ -1,0 +1,1128 @@
+{
+  "UniverseName": "The Andromeda Expanse (Titan Stress Test)",
+  "Modules": {
+    "ShowRarity": true,
+    "UseNarrative": true,
+    "UsePointPools": true
+  },
+  "ArchetypeTitle": "Classification",
+  "Archetypes": {
+    "Orbital Marine": {
+      "NicknameChance": 0.85,
+      "GenderOdds": {
+        "Male": 45,
+        "Female": 45,
+        "Cyborg": 10
+      },
+      "FirstNames": [
+        "Jax",
+        "Kael",
+        "Sloane",
+        "Vance",
+        "Nova",
+        "Rex",
+        "Cyrus",
+        "Nyx",
+        "Jace",
+        "Kira",
+        "Zane",
+        "Lyra",
+        "Gage",
+        "Echo",
+        "Silas",
+        "Tari",
+        "Dax",
+        "Rye",
+        "Vex",
+        "Kaelen",
+        "Orion",
+        "Vega",
+        "Corbin",
+        "Sera",
+        "Nash",
+        "Juno",
+        "Torin",
+        "Elara",
+        "Ronin",
+        "Aria",
+        "Titus",
+        "Valeria",
+        "Gideon",
+        "Cassian",
+        "Freya",
+        "Bram",
+        "Xenon",
+        "Zeta",
+        "Axiom",
+        "Prime"
+      ],
+      "LastNames": [
+        "Vanguard",
+        "Cross",
+        "Steele",
+        "Graves",
+        "Sterling",
+        "Mercer",
+        "Locke",
+        "Frost",
+        "Kane",
+        "Voss",
+        "Blackwood",
+        "Winters",
+        "Reyes",
+        "Thorne",
+        "Slade",
+        "Hunter",
+        "Wolfe",
+        "Bane",
+        "Creed",
+        "Ash",
+        "Pike",
+        "Stark",
+        "Gunn",
+        "Finch",
+        "Crow",
+        "Hawk",
+        "Stone",
+        "Flint",
+        "Blood",
+        "Iron",
+        "Cobalt",
+        "Silvers",
+        "Dusk",
+        "Dawn",
+        "Sol",
+        "Void",
+        "Abyss",
+        "Rift",
+        "Trench",
+        "Apex"
+      ],
+      "Nicknames": [
+        "Deadeye",
+        "Ghost",
+        "Reaper",
+        "Wolverine",
+        "Bulldog",
+        "Viper",
+        "Phantom",
+        "Nomad",
+        "Havoc",
+        "Rogue",
+        "Spitfire",
+        "Ironside",
+        "Mantis",
+        "Grizzly",
+        "Wraith",
+        "Titan",
+        "Spectre",
+        "Jester",
+        "Outlaw",
+        "Venom",
+        "Doomsday",
+        "Jackal",
+        "Kodiak",
+        "Sabre",
+        "Scourge",
+        "Whisper",
+        "Echo",
+        "Shade",
+        "Mirage",
+        "Omen"
+      ],
+      "StartingTags": [ "Military", "Tactical", "Humanoid" ],
+      "MandatoryTraits": {
+        "Homeworld": [
+          {
+            "Value": "Earth (Terra Prime)",
+            "Weight": 50
+          },
+          {
+            "Value": "Mars Dust Colonies",
+            "Weight": 40
+          },
+          {
+            "Value": "Titan Processing Station",
+            "Weight": 30
+          },
+          {
+            "Value": "Alpha Centauri Core",
+            "Weight": 20
+          },
+          {
+            "Value": "Deep Space Orbital Rig",
+            "Weight": 15
+          },
+          {
+            "Value": "The Outer Rim Wastes",
+            "Weight": 15
+          },
+          {
+            "Value": "Unknown Deep-Cryo Ship",
+            "Weight": 5,
+            "GrantsTag": "Ancient",
+            "Rarity": "Epic"
+          }
+        ],
+        "Armor Class": [
+          {
+            "Value": "Standard Issue Kevlar",
+            "Weight": 50,
+            "Rarity": "Common"
+          },
+          {
+            "Value": "Ablative Plating",
+            "Weight": 40,
+            "Rarity": "Uncommon"
+          },
+          {
+            "Value": "Titanium Mesh",
+            "Weight": 30
+          },
+          {
+            "Value": "Powered Exosuit",
+            "Weight": 15,
+            "GrantsTag": "Heavy_Armor",
+            "Rarity": "Rare"
+          },
+          {
+            "Value": "Stealth Carapace",
+            "Weight": 15,
+            "GrantsTag": "Stealth",
+            "Rarity": "Rare"
+          },
+          {
+            "Value": "Void-Sealed Rig",
+            "Weight": 10,
+            "GrantsTag": "Space_Ready"
+          },
+          {
+            "Value": "Juggernaut Shell",
+            "Weight": 5,
+            "GrantsTag": "Heavy_Armor",
+            "Rarity": "Epic"
+          },
+          {
+            "Value": "Precursor Relic Armor",
+            "Weight": 1,
+            "GrantsTag": "Alien_Tech",
+            "Rarity": "Legendary"
+          }
+        ],
+        "Primary Weapon": [
+          {
+            "Value": "M4-Pulse Rifle",
+            "Weight": 50
+          },
+          {
+            "Value": "Heavy Las-Cannon",
+            "Weight": 20,
+            "GrantsTag": "Heavy_Weapon"
+          },
+          {
+            "Value": "Monomolecular Sword",
+            "Weight": 20,
+            "GrantsTag": "Melee"
+          },
+          {
+            "Value": "Plasma Incinerator",
+            "Weight": 15,
+            "GrantsTag": "Energy_Weapon"
+          },
+          {
+            "Value": "Gauss Sniper",
+            "Weight": 15
+          },
+          {
+            "Value": "Sonic Shotgun",
+            "Weight": 10
+          },
+          {
+            "Value": "Magnetic Railgun",
+            "Weight": 10,
+            "GrantsTag": "Heavy_Weapon"
+          },
+          {
+            "Value": "Twin-Linked SMGs",
+            "Weight": 10
+          },
+          {
+            "Value": "Micro-Missile Swarm",
+            "Weight": 5,
+            "Rarity": "Epic"
+          },
+          {
+            "Value": "Dark Matter Projector",
+            "Weight": 1,
+            "GrantsTag": "Alien_Tech",
+            "Rarity": "Legendary"
+          }
+        ],
+        "Combat Specialty": [
+          "Breacher",
+          "Marksman",
+          "Field Medic",
+          "Combat Hacker",
+          "Demolitions Expert",
+          "Recon Scout",
+          "Heavy Gunner",
+          "Drop-Ship Pilot",
+          "Orbital Engineer"
+        ]
+      },
+      "PointPools": {
+        "Combat Stats": {
+          "TotalPoints": 60,
+          "MinPerAttribute": 5,
+          "MaxPerAttribute": 18,
+          "Attributes": [ "Strength", "Reflexes", "Marksmanship", "Tech_Skill", "Endurance" ]
+        }
+      }
+    },
+    "Void Corsair": {
+      "NicknameChance": 0.95,
+      "GenderOdds": {
+        "Male": 40,
+        "Female": 40,
+        "Mutant": 20
+      },
+      "FirstNames": [
+        "Rook",
+        "Corsair",
+        "Flint",
+        "Bane",
+        "Silas",
+        "Cassidy",
+        "Vane",
+        "Kidd",
+        "Morgan",
+        "Thatch",
+        "Drake",
+        "Ryder",
+        "Quinn",
+        "Soren",
+        "Talon",
+        "Malakai",
+        "Draven",
+        "Garrick",
+        "Zane",
+        "Lorna"
+      ],
+      "LastNames": [
+        "Blood",
+        "Star",
+        "Void",
+        "Rift",
+        "Scourge",
+        "Black",
+        "Cross",
+        "Graves",
+        "Voss",
+        "Reyes",
+        "Ash",
+        "Finch",
+        "Crow",
+        "Hawk",
+        "Storm",
+        "Frost",
+        "Pyre",
+        "Shade",
+        "Wraith",
+        "Grimm"
+      ],
+      "Nicknames": [
+        "The Bastard",
+        "Dead-Drop",
+        "Red-Eye",
+        "The Rat",
+        "Two-Credits",
+        "Silver-Tongue",
+        "Lucky",
+        "Iron-Jaw",
+        "The Snake",
+        "Mad-Dog",
+        "Cutthroat",
+        "The Jackal",
+        "Bullet-Tooth",
+        "Smuggler's Ruin",
+        "The Vulture",
+        "Star-Killer",
+        "The Mute",
+        "Half-Burnt"
+      ],
+      "StartingTags": [ "Humanoid", "Outlaw", "Underworld" ],
+      "MandatoryTraits": {
+        "Infamy Level": [
+          {
+            "Value": "Unknown Drifter",
+            "Weight": 30
+          },
+          {
+            "Value": "Local Nuisance",
+            "Weight": 40
+          },
+          {
+            "Value": "Wanted in Three Systems",
+            "Weight": 20
+          },
+          {
+            "Value": "Sector-Wide Target",
+            "Weight": 10
+          },
+          {
+            "Value": "Galactic Public Enemy No. 1",
+            "Weight": 5,
+            "GrantsTag": "Famous",
+            "Rarity": "Epic"
+          }
+        ],
+        "Signature Weapon": [
+          "Sawed-off Flak Cannon",
+          "Twin Pearl-Handled Las-Blasters",
+          "Rusty Machete",
+          "Custom Snub-Nose Revolver",
+          "Poisoned Darts",
+          "Thermal Detonator Bandolier",
+          "Stolen Military Plasma Rifle"
+        ],
+        "Ship Name": [
+          "The Rusty Bucket",
+          "The Crimson Debt",
+          "The Last Laugh",
+          "Void-Walker",
+          "The Broken Promise",
+          "Fool's Errand",
+          "The Iron Maiden",
+          "Orphan-Maker"
+        ],
+        "Quirk or Flaw": [
+          "Owes a massive debt to a crime lord",
+          "Never leaves witnesses",
+          "Has a soft spot for stray animals",
+          "Is missing an eye and replacing it with a cheap scanner",
+          "Drinks engine coolant",
+          "Is terrified of the vacuum of space"
+        ]
+      },
+      "PointPools": {
+        "Scoundrel Stats": {
+          "TotalPoints": 50,
+          "MinPerAttribute": 3,
+          "MaxPerAttribute": 18,
+          "Attributes": [ "Cunning", "Piloting", "Intimidation", "Luck", "Deception" ]
+        }
+      }
+    },
+    "Strike Fighter": {
+      "NicknameChance": 1.0,
+      "GenderOdds": {
+        "Machine": 50,
+        "Automated AI": 50
+      },
+      "FirstNames": [
+        "F-104",
+        "VF-1",
+        "X-99",
+        "A-Wing",
+        "T-65",
+        "RZ-1",
+        "SA-43",
+        "YF-19",
+        "Swordfish",
+        "Arwing",
+        "Viper",
+        "Wraith",
+        "Ghost",
+        "Spectre",
+        "Phantom",
+        "Demon",
+        "Banshee",
+        "Mantis",
+        "Wasp",
+        "Hornet"
+      ],
+      "LastNames": [
+        "Interceptor",
+        "Striker",
+        "Bomber",
+        "Scout",
+        "Dogfighter",
+        "Vanguard",
+        "Pursuer",
+        "Aggressor",
+        "Defiant",
+        "Arrow"
+      ],
+      "Nicknames": [
+        "Red-Leader",
+        "Black-Sheep",
+        "Jester-One",
+        "Maverick",
+        "Iceman",
+        "Joker",
+        "Voodoo-Child",
+        "Star-Dust",
+        "Boomerang",
+        "Meteor",
+        "Comet",
+        "Nova-Flash",
+        "Death-Knell",
+        "Silent-Strike",
+        "Sun-Diver"
+      ],
+      "StartingTags": [ "Vehicle", "Fighter", "Spacebound" ],
+      "MandatoryTraits": {
+        "Thruster Type": [
+          {
+            "Value": "Twin Ion Engines",
+            "Weight": 40
+          },
+          {
+            "Value": "Plasma Afterburners",
+            "Weight": 30
+          },
+          {
+            "Value": "Gravimetric Drives",
+            "Weight": 20
+          },
+          {
+            "Value": "Dark Matter Vents",
+            "Weight": 5,
+            "GrantsTag": "Stealth",
+            "Rarity": "Epic"
+          }
+        ],
+        "Dogfight Weaponry": [
+          "Quad-Laser Cannons",
+          "Proton Torpedo Pods",
+          "Gatling Mass-Drivers",
+          "Auto-Tracking Plasma Turrets",
+          "EMP Missile Racks",
+          "Tachyon Beam Splitters"
+        ],
+        "Countermeasures": [
+          "Thermal Chaff",
+          "Holographic Decoys",
+          "Sensor Jamming Field",
+          "Deflector Micro-Shields",
+          "Reactive Armor Plating"
+        ],
+        "Manufacturer": [
+          "Core Dynamics",
+          "Incom Corp",
+          "MandalMotors",
+          "Sienar Fleet Systems",
+          "Kuat Drive Yards",
+          "Unknown Syndicate"
+        ]
+      },
+      "PointPools": {
+        "Fighter Specs": {
+          "TotalPoints": 45,
+          "MinPerAttribute": 1,
+          "MaxPerAttribute": 18,
+          "Attributes": [ "Maneuverability", "Top_Speed", "Target_Lock", "Hull_Strength" ]
+        }
+      }
+    },
+    "Capital Starship": {
+      "NicknameChance": 1.0,
+      "GenderOdds": { "Machine": 100 },
+      "FirstNames": [
+        "ISS",
+        "UNSC",
+        "VSS",
+        "The",
+        "Project",
+        "HMS",
+        "CSV",
+        "RSV",
+        "UFS",
+        "OAS"
+      ],
+      "LastNames": [
+        "Event Horizon",
+        "Normandy",
+        "Enterprise",
+        "Leviathan",
+        "Aegis",
+        "Valkyrie",
+        "Nemesis",
+        "Prometheus",
+        "Infinity",
+        "Endurance"
+      ],
+      "Nicknames": [
+        "Dreadnought",
+        "Cruiser",
+        "Frigate",
+        "Corvette",
+        "Carrier",
+        "Destroyer",
+        "Freighter",
+        "Gunboat"
+      ],
+      "StartingTags": [ "Vehicle", "Spacebound", "Capital_Ship" ],
+      "MandatoryTraits": {
+        "Drive Core": [
+          {
+            "Value": "Standard Fusion Engine",
+            "Weight": 50
+          },
+          {
+            "Value": "Alcubierre Warp Drive",
+            "Weight": 30
+          },
+          {
+            "Value": "Quantum Slipstream Generator",
+            "Weight": 15,
+            "Rarity": "Rare"
+          },
+          {
+            "Value": "Singularity Reactor",
+            "Weight": 5,
+            "GrantsTag": "Volatile",
+            "Rarity": "Epic"
+          }
+        ],
+        "Hull Material": [
+          "Military Grade Titanium",
+          "Carbon-Nanotube Weave",
+          "Plasteel Composite",
+          "Ceramic Ablative Tiles",
+          "Bio-Organic Living Weave"
+        ],
+        "Primary Armament": [
+          "Spinal Mac-Cannon",
+          "Heavy Turbo-Lasers",
+          "Photon Torpedo Tubes",
+          "Ion Disruptor Cannons",
+          "Kinetic Bombardment Arrays"
+        ],
+        "Ship Quirk": [
+          "Smells faintly of ozone and old blood",
+          "The AI occasionally sings nursery rhymes",
+          "Vibrates violently at warp speeds",
+          "Runs perfectly without a single crew member"
+        ]
+      },
+      "PointPools": {
+        "Ship Specifications": {
+          "TotalPoints": 50,
+          "MinPerAttribute": 1,
+          "MaxPerAttribute": 20,
+          "Attributes": [ "Hull_Integrity", "Engine_Speed", "Firepower", "Sensor_Range" ]
+        }
+      }
+    },
+    "Celestial Body": {
+      "NicknameChance": 0.9,
+      "GenderOdds": { "Planet": 100 },
+      "FirstNames": [
+        "Kepler",
+        "Gliese",
+        "Trappist",
+        "Alpha",
+        "Proxima",
+        "Epsilon",
+        "HD",
+        "Pegasi",
+        "Sirius",
+        "Vega",
+        "Orion",
+        "Cygnus",
+        "Draco",
+        "Lyra",
+        "Centauri",
+        "Tauri",
+        "Ceti",
+        "Eridani",
+        "Lupi",
+        "Aquilae"
+      ],
+      "LastNames": [
+        "Prime",
+        "Secundus",
+        "Tertius",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "IX",
+        "VII",
+        "Major",
+        "Minor",
+        "Core",
+        "Nexus",
+        "Reach",
+        "Expanse",
+        "Abyss",
+        "Haven",
+        "Sanctuary",
+        "Desolation"
+      ],
+      "Nicknames": [
+        "The Dustball",
+        "Hellscape",
+        "The Jewel",
+        "Dead Rock",
+        "Oceania",
+        "The Anvil",
+        "God's Mistake",
+        "The Cradle",
+        "Frozen Tomb",
+        "Burning Eye",
+        "The Emerald",
+        "Rust-World",
+        "The Hive",
+        "Silent Orb",
+        "Shattered Sphere"
+      ],
+      "StartingTags": [ "Location", "Planet" ],
+      "MandatoryTraits": {
+        "Biome": [
+          {
+            "Value": "Lush Jungle",
+            "Weight": 20
+          },
+          {
+            "Value": "Barren Desert",
+            "Weight": 30
+          },
+          {
+            "Value": "Frozen Ice Tundra",
+            "Weight": 20
+          },
+          {
+            "Value": "Volcanic Wasteland",
+            "Weight": 15,
+            "GrantsTag": "Hostile"
+          },
+          {
+            "Value": "Endless Ocean",
+            "Weight": 15
+          },
+          {
+            "Value": "Toxic Swamp",
+            "Weight": 10,
+            "GrantsTag": "Hostile"
+          },
+          {
+            "Value": "Ecumenopolis (City Planet)",
+            "Weight": 5,
+            "GrantsTag": "Civilized",
+            "Rarity": "Epic"
+          },
+          {
+            "Value": "Shattered Core (Asteroid Field)",
+            "Weight": 5,
+            "GrantsTag": "Hostile",
+            "Rarity": "Rare"
+          }
+        ],
+        "Atmosphere": [
+          "Breathable (Nitrogen-Oxygen)",
+          "Thin and Freezing",
+          "Crushing High-Pressure",
+          "Toxic Sulfur Clouds",
+          "Corrosive Acid Rain",
+          "No Atmosphere (Vacuum)"
+        ],
+        "Dominant Feature": [
+          "Massive Planetary Rings",
+          "Twin Moons",
+          "Endless Mega-Storms",
+          "Ruins of a Dead Civilization",
+          "Giant Subterranean Caves",
+          "Crystalline Spire Mountains",
+          "Orbiting Debris Field"
+        ],
+        "Native Hazard": [
+          "Apex Predators",
+          "Radiation Spikes",
+          "Flesh-Eating Parasites",
+          "Hostile Sentient Plants",
+          "Unstable Tectonic Plates",
+          "None (Safe Haven)"
+        ]
+      },
+      "PointPools": {
+        "Planetary Specs": {
+          "TotalPoints": 35,
+          "MinPerAttribute": 1,
+          "MaxPerAttribute": 10,
+          "Attributes": [ "Gravity", "Resource_Yield", "Toxicity", "Tech_Level" ]
+        }
+      }
+    },
+    "Galactic Faction": {
+      "NicknameChance": 0.8,
+      "GenderOdds": { "Organization": 100 },
+      "FirstNames": [
+        "The United",
+        "Holy",
+        "Crimson",
+        "Iron",
+        "Obsidian",
+        "Astral",
+        "Solar",
+        "Void",
+        "Stellar",
+        "Galactic",
+        "The Free",
+        "Sovereign",
+        "Eternal",
+        "Shadow",
+        "Neon",
+        "Cyber",
+        "Blood",
+        "Silver",
+        "Golden",
+        "Dark"
+      ],
+      "LastNames": [
+        "Syndicate",
+        "Empire",
+        "Cartel",
+        "Republic",
+        "Dominion",
+        "Collective",
+        "Federation",
+        "Alliance",
+        "Pact",
+        "Covenant",
+        "Brotherhood",
+        "Conglomerate",
+        "Corporation",
+        "Order",
+        "Cult",
+        "Swarm",
+        "Vanguard",
+        "Front",
+        "Legion",
+        "Hegemony"
+      ],
+      "Nicknames": [
+        "The Corp",
+        "The Swarm",
+        "The Family",
+        "Big Brother",
+        "The Zealots",
+        "The Rebels",
+        "The Board",
+        "The Machine",
+        "The Hive",
+        "The Network"
+      ],
+      "StartingTags": [ "Faction", "Organization" ],
+      "MandatoryTraits": {
+        "Core Ideology": [
+          {
+            "Value": "Ruthless Capitalism",
+            "Weight": 30,
+            "GrantsTag": "Wealthy"
+          },
+          {
+            "Value": "Religious Fanaticism",
+            "Weight": 20,
+            "GrantsTag": "Zealots"
+          },
+          {
+            "Value": "Utopian Democracy",
+            "Weight": 15
+          },
+          {
+            "Value": "Militaristic Expansion",
+            "Weight": 20,
+            "GrantsTag": "Aggressive"
+          },
+          {
+            "Value": "Technological Supremacy",
+            "Weight": 15,
+            "GrantsTag": "Advanced"
+          },
+          {
+            "Value": "Piracy and Anarchy",
+            "Weight": 10
+          }
+        ],
+        "Primary Asset": [
+          "Monopoly on FTL Fuel",
+          "The Largest Grand Fleet",
+          "Unmatched Spy Network",
+          "Ancient Precursor Technology",
+          "Massive Agricultural Worlds",
+          "Control of the Criminal Underworld"
+        ],
+        "Leadership Structure": [
+          "A Board of Directors",
+          "An Absolute God-Emperor",
+          "A Democratic Senate",
+          "A Hive-Mind AI",
+          "A Shadow Council of Crime Lords",
+          "Warlord Chieftains"
+        ],
+        "Dark Secret": [
+          "They are secretly controlled by an AI",
+          "Their food source is made of people",
+          "They caused the collapse of the last empire",
+          "Their leaders are actually parasitic aliens",
+          "They are entirely bankrupt and faking it"
+        ]
+      },
+      "PointPools": {
+        "Faction Influence": {
+          "TotalPoints": 45,
+          "MinPerAttribute": 1,
+          "MaxPerAttribute": 15,
+          "Attributes": [ "Wealth", "Fleet_Size", "Covert_Ops", "Public_Support" ]
+        }
+      }
+    },
+    "Neon Citizen": {
+      "NicknameChance": 0.6,
+      "GenderOdds": {
+        "Male": 40,
+        "Female": 40,
+        "Non-Binary": 20
+      },
+      "FirstNames": [ "Zero", "Kito", "Lex", "Sari", "Milo", "Rin", "Tess", "Finn", "Cleo", "Dash" ],
+      "LastNames": [ "Vance", "Kidd", "Shin", "Mora", "Cruz", "Fuji", "Khan", "Ono", "Ross", "Sato" ],
+      "Nicknames": [ "Glitch", "Sparks", "Data", "Cred", "Stims", "Chrome", "Wire", "Byte", "Pixel", "Static" ],
+      "StartingTags": [ "Civilian", "Humanoid" ],
+      "MandatoryTraits": {
+        "District": [ "Upper Strata Penthouses", "Mid-Level Corporate Blocks", "The Neon Slums", "Black Market Sector" ],
+        "Occupation": [ "Data Runner", "Scrap Broker", "Synthetic Noodle Stand Owner", "Corporate Salaryman", "System Hacker" ]
+      },
+      "PointPools": {
+        "Street Stats": {
+          "TotalPoints": 30,
+          "MinPerAttribute": 1,
+          "MaxPerAttribute": 15,
+          "Attributes": [ "Street_Cred", "Hacking", "Bargaining", "Survival" ]
+        }
+      }
+    }
+  },
+  "BioTemplates": {
+    "1_Origin_and_Identity": [
+      {
+        "Text": "Designated {Full}, {Subject} is a registered {Classification} currently operating in the Andromeda system. Originally hailing from {Homeworld}, {Subject} left the core worlds behind for a life in the fringes.",
+        "Requires": "Military",
+        "Weight": 10
+      },
+      {
+        "Text": "Known on the rain-slicked streets as '{Nick}', {Subject} makes a precarious living as a {Occupation} in the {District}.",
+        "Requires": "Civilian",
+        "Weight": 20
+      },
+      {
+        "Text": "There are few names in the criminal underworld as feared as {Full}. Operating under the alias '{Nick}', {Subject} is a ruthless {Classification}.",
+        "Requires": "Outlaw",
+        "Weight": 20
+      },
+      {
+        "Text": "The {Full} is a {Nickname} class vessel. Built by {Manufacturer}, it was designed to conquer the cold expanse of the void.",
+        "Requires": "Capital_Ship",
+        "Weight": 20
+      },
+      {
+        "Text": "Sleek and deadly, {Full} is a {Nickname} class fighter craft. Manufactured by {Manufacturer}, it is built for pure dogfighting superiority.",
+        "Requires": "Fighter",
+        "Weight": 20
+      },
+      {
+        "Text": "Deep in the uncharted sectors lies {Full}, colloquially known to smugglers as '{Nick}'. It is a vast {Classification} orbiting a dying star.",
+        "Requires": "Planet",
+        "Weight": 20
+      },
+      {
+        "Text": "{Full}, often referred to simply as '{Nick}', is a massive {Classification} that spans multiple star systems.",
+        "Requires": "Organization",
+        "Weight": 20
+      }
+    ],
+    "2_Loadout_and_Gear": [
+      {
+        "Text": "In combat, {Subject} relies heavily on {Possessive} {Primary Weapon}, keeping a {Secondary Sidearm} holstered just in case. {Possessive} body is protected by {Armor Class}.",
+        "Requires": "Military",
+        "Weight": 10
+      },
+      {
+        "Text": "Surviving the city requires an edge. {Subject} relies on {Possessive} wits and a handful of stolen credits to stay ahead of the law.",
+        "Requires": "Civilian",
+        "Weight": 10
+      },
+      {
+        "Text": "A pirate is only as good as {Possessive} gun. {Subject} is never seen without {Possessive} {Signature Weapon}, ready to draw at the slightest provocation.",
+        "Requires": "Outlaw",
+        "Weight": 10
+      },
+      {
+        "Text": "Fitted with a {Drive Core}, the ship can cross entire sectors in days. Its hull is heavily reinforced with {Hull Material}, making it a formidable presence in orbit.",
+        "Requires": "Capital_Ship",
+        "Weight": 10
+      },
+      {
+        "Text": "Powered by {Thruster Type}, the craft can pull maneuvers that would crush an unaugmented pilot.",
+        "Requires": "Fighter",
+        "Weight": 10
+      },
+      {
+        "Text": "The surface is defined by a {Biome} environment. Any explorers must contend with its {Atmosphere} atmosphere if they hope to survive.",
+        "Requires": "Planet",
+        "Weight": 10
+      },
+      {
+        "Text": "Driven by a core philosophy of {Core Ideology}, the group is led ruthlessly by {Leadership Structure}.",
+        "Requires": "Organization",
+        "Weight": 10
+      }
+    ],
+    "3_Specialty_and_Quirks": [
+      {
+        "Text": "As a highly trained {Combat Specialty}, {Subject} takes pride in executing missions flawlessly. To aid in these operations, {Subject} utilizes a {Cybernetic Implant}.",
+        "Requires": "Military",
+        "Weight": 10
+      },
+      {
+        "Text": "Life out here has given {Object} a {Quirk or Flaw}, something that often gets {Object} into more trouble than {Subject} can handle.",
+        "Requires": "Outlaw",
+        "Weight": 10
+      },
+      {
+        "Text": "The vessel is far from perfect. Crews often whisper about its strange nature, noting that it {Ship Quirk}.",
+        "Requires": "Capital_Ship",
+        "Weight": 10
+      },
+      {
+        "Text": "If a pilot can get past the primary defenses, they still have to deal with the ship's {Countermeasures}.",
+        "Requires": "Fighter",
+        "Weight": 10
+      },
+      {
+        "Text": "From orbit, the most striking thing about the world is its {Dominant Feature}. However, on the ground, the real threat is the {Native Hazard}.",
+        "Requires": "Planet",
+        "Weight": 10
+      },
+      {
+        "Text": "Their true power lies in their {Primary Asset}, giving them immense leverage over neighboring star systems.",
+        "Requires": "Organization",
+        "Weight": 10
+      }
+    ],
+    "4_Offensive_Capabilities": [
+      {
+        "Text": "When the heavy fighting starts, {Subject} favors laying down suppressing fire, treating the {Primary Weapon} like an extension of {Possessive} own augmented arm.",
+        "Requires": "Heavy_Weapon",
+        "Weight": 50
+      },
+      {
+        "Text": "For offensive engagements, the vessel brings its {Primary Armament} to bear.",
+        "Requires": "Vehicle",
+        "Weight": 10
+      },
+      {
+        "Text": "In a dogfight, it unleashes hell using its {Dogfight Weaponry}, tearing enemy squadrons to shreds.",
+        "Requires": "Fighter",
+        "Weight": 10
+      },
+      {
+        "Text": "Whispers in the dark claim they harbor a {Dark Secret}, something that could destroy them if the galaxy ever found out.",
+        "Requires": "Organization",
+        "Weight": 10
+      }
+    ],
+    "5_Notable_Feats": [
+      {
+        "Text": "{Possessive} reflexes are augmented to unnatural speeds; observers have reported seeing {Object} move as a mere blur during a firefight.",
+        "Requires": "Humanoid",
+        "MinStatName": "Reflexes",
+        "MinStatValue": 16,
+        "Weight": 100
+      },
+      {
+        "Text": "{Possessive} luck is legendary. {Subject} has walked away from ship crashes, point-blank executions, and bad deals without a scratch.",
+        "Requires": "Outlaw",
+        "MinStatName": "Luck",
+        "MinStatValue": 16,
+        "Weight": 100
+      },
+      {
+        "Text": "With maximum Hull Integrity, this ship has survived direct kinetic broadsides that would have shattered lesser vessels into orbital dust.",
+        "Requires": "Capital_Ship",
+        "MinStatName": "Hull_Integrity",
+        "MinStatValue": 18,
+        "Weight": 100
+      },
+      {
+        "Text": "Its maneuverability is mathematically perfect. It can turn on a dime in a vacuum, pulling G-forces that defy physics.",
+        "Requires": "Fighter",
+        "MinStatName": "Maneuverability",
+        "MinStatValue": 16,
+        "Weight": 100
+      },
+      {
+        "Text": "Despite its harsh conditions, the planet is incredibly valuable due to a massive resource yield just beneath the crust.",
+        "Requires": "Planet",
+        "MinStatName": "Resource_Yield",
+        "MinStatValue": 9,
+        "Weight": 100
+      },
+      {
+        "Text": "Their wealth is practically infinite. They can buy entire planetary governments and wipe out debts with a single keystroke.",
+        "Requires": "Organization",
+        "MinStatName": "Wealth",
+        "MinStatValue": 14,
+        "Weight": 100
+      },
+      {
+        "Text": "Though highly capable, {Subject} tries to keep a low profile to avoid unnecessary corporate entanglements.",
+        "Requires": "Humanoid",
+        "Weight": 1
+      },
+      {
+        "Text": "The ship has a long service record, full of routine patrols and uneventful cargo runs.",
+        "Requires": "Vehicle",
+        "Weight": 1
+      },
+      {
+        "Text": "It remains a relatively quiet entity in the grand scheme of the cosmos.",
+        "Weight": 1
+      }
+    ],
+    "6_Current_Status": [
+      {
+        "Text": "Currently, {Subject} is awaiting a new contract, ready to deploy at a moment's notice.",
+        "Requires": "Military",
+        "Weight": 10
+      },
+      {
+        "Text": "Currently, {Subject} is drinking in a dive bar on {Ship Name}, waiting for the heat to die down.",
+        "Requires": "Outlaw",
+        "Weight": 10
+      },
+      {
+        "Text": "At present, the ship sits in spacedock, its {Drive Core} idling as it awaits a new captain and a fresh heading into the stars.",
+        "Requires": "Capital_Ship",
+        "Weight": 10
+      },
+      {
+        "Text": "Right now, it sits locked in a launch tube, fully fueled and primed for intercept.",
+        "Requires": "Fighter",
+        "Weight": 10
+      },
+      {
+        "Text": "For now, the planet continues its silent orbit, waiting for the next brave soul to chart its surface.",
+        "Requires": "Planet",
+        "Weight": 10
+      },
+      {
+        "Text": "As the galaxy turns, they wait in the shadows, plotting their next major power play.",
+        "Requires": "Organization",
+        "Weight": 10
+      }
+    ]
+  }
+}
